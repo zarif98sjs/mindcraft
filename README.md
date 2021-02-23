@@ -1,0 +1,2 @@
+# mindcraft
+ Standalone blog
