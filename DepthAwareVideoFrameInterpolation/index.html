@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="Using depth to interpolate videos  Introduction The idea of video frame interpolation has been prevalent for quite a long time. The problem is defined like this : from a given set of images &#x2F; video ,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zarif98sjs.github.io/images/DepthAwareVideoFrameInterpolation/DAIN.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/images/DepthAwareVideoFrameInterpolation/context_extraction.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/images/DepthAwareVideoFrameInterpolation/evaluation.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/dummy/DepthAwareVideoFrameInterpolation/DAIN.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/dummy/DepthAwareVideoFrameInterpolation/context_extraction.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/dummy/DepthAwareVideoFrameInterpolation/evaluation.png">
 <meta property="article:published_time" content="2020-09-30T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-26T11:59:10.775Z">
+<meta property="article:modified_time" content="2021-04-26T19:57:53.954Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zarif98sjs.github.io/images/DepthAwareVideoFrameInterpolation/DAIN.png">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/dummy/DepthAwareVideoFrameInterpolation/DAIN.png">
     
     
       
@@ -165,7 +165,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><img src="/images/DepthAwareVideoFrameInterpolation/DAIN.png"></p>
+    <p><img src="/dummy/DepthAwareVideoFrameInterpolation/DAIN.png"></p>
 <p style="text-align:center;">Using depth to interpolate videos</p>
 
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p> The idea of video frame interpolation has been prevalent for quite a long time. The problem is defined like this : from a given set of images / video , synthesize non-existent frames in-between the original frames .   </p>
@@ -181,12 +181,12 @@
 <li>Frame Synthesize Network</li>
 </ul>
 <p>The depth aware flow projection layer is used to obtain the <code>intermediate flows</code> and then the <code>adaptive warping layer</code> is used to warp the input frames , depth maps and contextual features . The last sub-module <code>Frame Synthesize Network</code> generates the output frame with <code>residual learning</code> .</p>
-<p><img src="/images/DepthAwareVideoFrameInterpolation/context_extraction.png"></p>
+<p><img src="/dummy/DepthAwareVideoFrameInterpolation/context_extraction.png"></p>
 <p style="text-align:center;">Structure of Context Extraction Network</p>
 
 <h1 id="Evaluation-Datasets"><a href="#Evaluation-Datasets" class="headerlink" title="Evaluation Datasets"></a>Evaluation Datasets</h1><p><strong>Middlebury</strong> : Widely used to evaluate video frame interpolation methods. Image Resolution 640 x 480 pixels<br><strong>Vimeo90K</strong> : Contains 3782 triplets in the test set. Image Resolution 448 x 256 pixels<br><strong>UFC101</strong> : Contains videos with large variety of human actions . Resolution 256 x 256 pixels  </p>
 <h1 id="Evaluation-Metric"><a href="#Evaluation-Metric" class="headerlink" title="Evaluation Metric"></a>Evaluation Metric</h1><p><code>Interpolation Error</code> <strong>(IE)</strong> , <code>Normalized Interpolation Error</code> <strong>(NIE)</strong> .<br>Lower Interpolation errors indicate higher performance . </p>
-<p><img src="/images/DepthAwareVideoFrameInterpolation/evaluation.png"></p>
+<p><img src="/dummy/DepthAwareVideoFrameInterpolation/evaluation.png"></p>
 <p style="text-align:center;">Comparison on the Middlebury Evaluation set</p>
 
 
