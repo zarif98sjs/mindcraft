@@ -9,36 +9,36 @@
     <meta name="description" content="The Actual ProblemGiven a flow network , find a feasible flow through the flow network that obtains the maximum possible flow rate . In plain language , you are given a source and a sink in a flow net">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Max Flow : A Deep Dive">
-<meta property="og:url" content="http://example.com/MaxFlow/index.html">
+<meta property="og:url" content="https://zarif98sjs.github.io/dummy/MaxFlow/index.html">
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="The Actual ProblemGiven a flow network , find a feasible flow through the flow network that obtains the maximum possible flow rate . In plain language , you are given a source and a sink in a flow net">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/MaxFlow/yes_no.jpg">
-<meta property="og:image" content="http://example.com/images/MaxFlow/Flow1.png">
-<meta property="og:image" content="http://example.com/images/MaxFlow/Flow2.png">
-<meta property="og:image" content="http://example.com/images/MaxFlow/Flow3.png">
-<meta property="og:image" content="http://example.com/images/MaxFlow/Flow4.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/images/MaxFlow/yes_no.jpg">
+<meta property="og:image" content="https://zarif98sjs.github.io/images/MaxFlow/Flow1.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/images/MaxFlow/Flow2.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/images/MaxFlow/Flow3.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/images/MaxFlow/Flow4.png">
 <meta property="article:published_time" content="2020-07-04T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-26T14:51:56.636Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/MaxFlow/yes_no.jpg">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/images/MaxFlow/yes_no.jpg">
     
     
       
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
+          <link rel="shortcut icon" href="/dummy/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/dummy/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/dummy/images/apple-touch-icon.png">
         
       
     
@@ -46,7 +46,7 @@
     <title>Max Flow : A Deep Dive</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/dummy/css/style.css">
 
     <!-- persian styles -->
     
@@ -77,11 +77,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/dummy/">Home</a></li>
          
-          <li><a href="/archives/">Archive</a></li>
+          <li><a href="/dummy/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -89,10 +89,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/RedBlackTree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/dummy/RedBlackTree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/BinaryLifting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/dummy/BinaryLifting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -105,17 +105,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/MaxFlow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: http://example.com/MaxFlow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -153,14 +153,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/categories/Algorithm/Deep-Dive/">Deep Dive</a>
+        <a class="category-link" href="/dummy/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/dummy/categories/Algorithm/Deep-Dive/">Deep Dive</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
+        <a class="tag-link-link" href="/dummy/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
     </div>
 
 
@@ -243,11 +243,11 @@ Spoiler
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/dummy/">Home</a></li>
          
-          <li><a href="/archives/">Archive</a></li>
+          <li><a href="/dummy/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
@@ -258,17 +258,17 @@ Spoiler
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/MaxFlow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: http://example.com/MaxFlow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -296,11 +296,11 @@ Spoiler
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/dummy/">Home</a></li>
          
-          <li><a href="/archives/">Archive</a></li>
+          <li><a href="/dummy/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -348,7 +348,7 @@ Spoiler
   </script>
 
 
-<script src="/js/main.js"></script>
+<script src="/dummy/js/main.js"></script>
 
 <!-- search -->
 
