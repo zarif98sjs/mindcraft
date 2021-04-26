@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="#lightoj #cp #problem_solving #binary_search Idea Binary Search  Within time complexity only thing to do is binary search i.e use the lower_bound or the upper bound function to find the value of the i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LightOj 1088 (Points in Segments)">
+<meta property="og:url" content="http://example.com/LightOj1088/index.html">
+<meta property="og:site_name" content="MindCraft">
+<meta property="og:description" content="#lightoj #cp #problem_solving #binary_search Idea Binary Search  Within time complexity only thing to do is binary search i.e use the lower_bound or the upper bound function to find the value of the i">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-11-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-23T18:39:11.730Z">
+<meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Competitive Programming Editorial">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>LightOj 1088 (Points in Segments)</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/LightOj1062/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/LightOj1096/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/LightOj1088/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/LightOj1088/&text=LightOj 1088 (Points in Segments)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/LightOj1088/&is_video=false&description=LightOj 1088 (Points in Segments)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LightOj 1088 (Points in Segments)&body=Check out this article: http://example.com/LightOj1088/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/LightOj1088/&name=LightOj 1088 (Points in Segments)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/LightOj1088/&t=LightOj 1088 (Points in Segments)"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Idea"><span class="toc-number">1.</span> <span class="toc-text">Idea</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        LightOj 1088 (Points in Segments)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Md. Zarif Ul Alam</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-11-22T00:00:00.000Z" itemprop="datePublished">2018-11-22</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Competitive-Programming-Editorial/" rel="tag">Competitive Programming Editorial</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>#lightoj #cp #problem_solving #binary_search</p>
+<h1 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h1><hr>
+<p>Binary Search</p>
+<ul>
+<li>Within time complexity only thing to do is binary search i.e use the lower_bound or the upper bound function to find the value of the index .</li>
+<li><em><strong>lower_bound</strong></em> : points to the first number equals to the ‘num’ or greater than the ‘num’</li>
+<li><em><strong>upper_bound</strong></em> : points to the first number greater than the ‘num’</li>
+</ul>
+<p>Critical Test Cases (Queries) :<br>6(present) 10(present) –&gt; r-l+1<br>5(absent) 10(present) –&gt; r-l+1<br>5(absent) 9(absent) –&gt; r-l<br>6(present) 9(absent) –&gt; r-l  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* Which of the favors of your Lord will you deny? */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi       acos(-1)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SI(n)    scanf(<span class="meta-string">&quot;%d&quot;</span>,&amp;n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SLL(n)   scanf(<span class="meta-string">&quot;%lld&quot;</span>,&amp;n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SULL(n)  scanf(<span class="meta-string">&quot;%llu&quot;</span>,&amp;n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SC(n)    scanf(<span class="meta-string">&quot;%c&quot;</span>,&amp;n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SD(n)    scanf(<span class="meta-string">&quot;%lf&quot;</span>,&amp;n)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr(i,a,b) for(int i=a ,_b=(b) ;i&lt;= _b;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL      long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PUB     push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> POB     pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP      make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII     pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL     pair<span class="meta-string">&lt;ll,ll&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GCD     __gcd</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG   cout&lt;&lt;<span class="meta-string">&quot;aw&quot;</span>&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ara[<span class="number">100010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tc;</span><br><span class="line">    <span class="built_in">SI</span>(tc);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fr</span>(i,<span class="number">1</span>,tc)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n,q,a,b,ans;</span><br><span class="line">        <span class="built_in">SI</span>(n),<span class="built_in">SI</span>(q);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">fill</span>(ara+<span class="number">1</span>,ara+n+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">fr</span>(j,<span class="number">0</span>,n<span class="number">-1</span>)</span><br><span class="line">            <span class="built_in">SI</span>(ara[j]);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d:\n&quot;</span>,i);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">fr</span>(k,<span class="number">1</span>,q)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">SI</span>(a),<span class="built_in">SI</span>(b);</span><br><span class="line">            <span class="keyword">int</span> left = <span class="built_in">lower_bound</span>(ara,ara+n,a)-ara;</span><br><span class="line">            <span class="keyword">int</span> right = <span class="built_in">lower_bound</span>(ara,ara+n,b)-ara;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//cout&lt;&lt;&quot;**&quot;&lt;&lt;left&lt;&lt;&quot; &quot;&lt;&lt;right&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">binary_search</span>(ara,ara+n,b)==<span class="literal">true</span>)</span><br><span class="line">                ans = right - left + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="comment">// binary_search(b)==false</span></span><br><span class="line">                ans = right - left;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Idea"><span class="toc-number">1.</span> <span class="toc-text">Idea</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/LightOj1088/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/LightOj1088/&text=LightOj 1088 (Points in Segments)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/LightOj1088/&is_video=false&description=LightOj 1088 (Points in Segments)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LightOj 1088 (Points in Segments)&body=Check out this article: http://example.com/LightOj1088/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/LightOj1088/&title=LightOj 1088 (Points in Segments)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/LightOj1088/&name=LightOj 1088 (Points in Segments)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/LightOj1088/&t=LightOj 1088 (Points in Segments)"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    Md. Zarif Ul Alam
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

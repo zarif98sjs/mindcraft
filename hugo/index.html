@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="While creating a website from scratch and deploying it can seem daunting at the first glance , using the help of frameworks like Hugo you can build your static websites for your personal use &#x2F; blog &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating your first website using Hugo &amp; GitHub Pages">
+<meta property="og:url" content="http://example.com/hugo/index.html">
+<meta property="og:site_name" content="MindCraft">
+<meta property="og:description" content="While creating a website from scratch and deploying it can seem daunting at the first glance , using the help of frameworks like Hugo you can build your static websites for your personal use &#x2F; blog &#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/hugocover.jpg">
+<meta property="article:published_time" content="2020-05-25T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-23T19:20:36.175Z">
+<meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/hugocover.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Creating your first website using Hugo &amp; GitHub Pages</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/LightOj1064/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/LightOj1308/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/hugo/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/hugo/&text=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/hugo/&is_video=false&description=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Creating your first website using Hugo &amp; GitHub Pages&body=Check out this article: http://example.com/hugo/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/hugo/&name=Creating your first website using Hugo &amp; GitHub Pages&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/hugo/&t=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-1-Download-Hugo"><span class="toc-number">1.</span> <span class="toc-text">Step 1 : Download Hugo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-2-Creating-your-new-site"><span class="toc-number">2.</span> <span class="toc-text">Step 2 : Creating your new site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-3-Download-your-theme"><span class="toc-number">3.</span> <span class="toc-text">Step 3 : Download your theme</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-4-Learn-Markdown"><span class="toc-number">4.</span> <span class="toc-text">Step 4 : Learn Markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-5-Test-your-site"><span class="toc-number">5.</span> <span class="toc-text">Step 5 : Test your site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-6-Deploy-your-site"><span class="toc-number">6.</span> <span class="toc-text">Step 6 : Deploy your site</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Creating your first website using Hugo &amp; GitHub Pages
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Md. Zarif Ul Alam</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-25T00:00:00.000Z" itemprop="datePublished">2020-05-25</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/website/">website</a> › <a class="category-link" href="/categories/website/hugo/">hugo</a> › <a class="category-link" href="/categories/website/hugo/github-pages/">github pages</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><img src="/images/hugocover.jpg"></p>
+<p>While creating a website from scratch and deploying it can seem daunting at the first glance , using the help of frameworks like <code>Hugo</code> you can build your static websites for your personal use / blog / portfolio and deploy it using <code>GitHub Pages</code> . Making websites is fun again ! </p>
+<p>Here , I will give a step by step process to build your website and to deploy it . Bear with me till the end :p </p>
+<h1 id="Step-1-Download-Hugo"><a href="#Step-1-Download-Hugo" class="headerlink" title="Step 1 : Download Hugo"></a><em>Step 1 : Download Hugo</em></h1><p>I will be showing the process for Windows . If you are a Linux / macOS user the process is pretty much same .<br>Download the latest 32 bit / 64 bit version according to your system from <a target="_blank" rel="noopener" href="https://github.com/gohugoio/hugo/releases">here</a><br>Create directory <code>Hugo\bin</code> in any of your disk and extract your download in this path . Add this path in your <code>PATH VARIABLE</code> so that you can access Hugo commands from your terminal later . If you are not familiar with adding path variable , don’t worry . Check it from <a target="_blank" rel="noopener" href="https://docs.telerik.com/teststudio/features/test-runners/add-path-environment-variables">here</a> .  </p>
+<h1 id="Step-2-Creating-your-new-site"><a href="#Step-2-Creating-your-new-site" class="headerlink" title="Step 2 : Creating your new site"></a><em>Step 2 : Creating your new site</em></h1><p>Open <code>Command Prompt</code> and go to your directory using <code>cd</code> command . Type <code>hugo new site YOUR_SITE_NAME</code> </p>
+<h1 id="Step-3-Download-your-theme"><a href="#Step-3-Download-your-theme" class="headerlink" title="Step 3 : Download your theme"></a><em>Step 3 : Download your theme</em></h1><p>Go <a target="_blank" rel="noopener" href="https://themes.gohugo.io/">here</a> . Find a theme according to your preference . This will make your life easy to get your website up and running in no time . Download your theme and extract your theme in the <code>\theme</code> directory that has been created in step 2 .  </p>
+<h1 id="Step-4-Learn-Markdown"><a href="#Step-4-Learn-Markdown" class="headerlink" title="Step 4 : Learn Markdown"></a><em>Step 4 : Learn Markdown</em></h1><p>Don’t worry if you have no idea what markdown is . Markdown is a lightweight markup language which won’t take more than 5 minutes to learn . Here’s <a target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">basic syntax</a> and here’s a <a target="_blank" rel="noopener" href="https://www.markdownguide.org/cheat-sheet/">cheat sheet</a></p>
+<h1 id="Step-5-Test-your-site"><a href="#Step-5-Test-your-site" class="headerlink" title="Step 5 : Test your site"></a><em>Step 5 : Test your site</em></h1><p>Almost all theme comes with a <code>\exampleSite</code> directory in themes . Replace the <code>\content</code> , <code>\static</code> , <code>config.toml</code> in your actual site directory with the ones in exampleSite .<br>Run <code>hugo server</code> command from your terminal . And you will find a localhost link . Hopefully you will be able to see your website :D<br>All of the themes comes with a <code>ReadMe</code> in their GitHub Repo . Read them to learn about how to modify and tweak your theme and create your content .</p>
+<h1 id="Step-6-Deploy-your-site"><a href="#Step-6-Deploy-your-site" class="headerlink" title="Step 6 : Deploy your site"></a><em>Step 6 : Deploy your site</em></h1><p>Now that you have created your site . It’s time for you to deploy and let the world know about your next big thing :p<br>Make a public repository <code>YOUR_USERNAME.github.io</code> and clone that repository locally . Now go to your site and type <code>hugo</code> in command prompt . This will create a <code>\public</code> directory in your site folder . Now copy all the contents from your directory to the repository you created in this step .<br>Commit your changes and go to GitHub . Go to repository settings and scroll down to <code>GitHub Pages</code> .<br>Hopefully you will find the link where your website is deployed . </p>
+<p>Now that you know how to create and deploy your site , the opportunities are endless !  </p>
+<hr>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-1-Download-Hugo"><span class="toc-number">1.</span> <span class="toc-text">Step 1 : Download Hugo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-2-Creating-your-new-site"><span class="toc-number">2.</span> <span class="toc-text">Step 2 : Creating your new site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-3-Download-your-theme"><span class="toc-number">3.</span> <span class="toc-text">Step 3 : Download your theme</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-4-Learn-Markdown"><span class="toc-number">4.</span> <span class="toc-text">Step 4 : Learn Markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-5-Test-your-site"><span class="toc-number">5.</span> <span class="toc-text">Step 5 : Test your site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-6-Deploy-your-site"><span class="toc-number">6.</span> <span class="toc-text">Step 6 : Deploy your site</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/hugo/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/hugo/&text=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/hugo/&is_video=false&description=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Creating your first website using Hugo &amp; GitHub Pages&body=Check out this article: http://example.com/hugo/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/hugo/&title=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/hugo/&name=Creating your first website using Hugo &amp; GitHub Pages&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/hugo/&t=Creating your first website using Hugo &amp; GitHub Pages"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    Md. Zarif Ul Alam
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

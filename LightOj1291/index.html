@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="#lightoj #cp #problem_solving #articulation #graph_theory Idea Articulation Bridge  Find the articulation bridges in the graph. If you remove the bridges, you will get several connected components. Th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LightOj 1291 (Real Life Traffic)">
+<meta property="og:url" content="http://example.com/LightOj1291/index.html">
+<meta property="og:site_name" content="MindCraft">
+<meta property="og:description" content="#lightoj #cp #problem_solving #articulation #graph_theory Idea Articulation Bridge  Find the articulation bridges in the graph. If you remove the bridges, you will get several connected components. Th">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-23T18:49:52.129Z">
+<meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Competitive Programming Editorial">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>LightOj 1291 (Real Life Traffic)</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/LightOj1308/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/LightOj1300/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/LightOj1291/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/LightOj1291/&text=LightOj 1291 (Real Life Traffic)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/LightOj1291/&is_video=false&description=LightOj 1291 (Real Life Traffic)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LightOj 1291 (Real Life Traffic)&body=Check out this article: http://example.com/LightOj1291/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/LightOj1291/&name=LightOj 1291 (Real Life Traffic)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/LightOj1291/&t=LightOj 1291 (Real Life Traffic)"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Idea"><span class="toc-number">1.</span> <span class="toc-text">Idea</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        LightOj 1291 (Real Life Traffic)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Md. Zarif Ul Alam</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-11T00:00:00.000Z" itemprop="datePublished">2020-05-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Competitive-Programming-Editorial/" rel="tag">Competitive Programming Editorial</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>#lightoj #cp #problem_solving #articulation #graph_theory</p>
+<h1 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h1><hr>
+<p>Articulation Bridge</p>
+<ul>
+<li>Find the articulation bridges in the graph.</li>
+<li>If you remove the bridges, you will get several connected components.</li>
+<li>Think carefully, there are 2 types of components.</li>
+<li>The 1st one is the connected component which had more than one bridge, if you cut one bridge, it still can connect with other components through other bridge.</li>
+<li>The 2nd one is the component which had only one bridge, if you cut the bridge, it cannot connect with other components.</li>
+<li>You may think that the answer is the number of 2nd type bridge, as they need another one path to connect with other components.</li>
+<li>Think carefully, you may still minimize the number of edges required.</li>
+<li>If you connect one 2nd type component to another 2nd type component, then it requires one edge rather than two edges.</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/** Which of the favors of your Lord will you deny ? **/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PLL pair<span class="meta-string">&lt;LL,LL&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF INT_MAX</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DBG(x) cerr &lt;&lt; __LINE__ &lt;&lt; <span class="meta-string">&quot; says: &quot;</span> &lt;&lt; #x &lt;&lt; <span class="meta-string">&quot; = &quot;</span> &lt;&lt; (x) &lt;&lt; endl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/pb_ds/assoc_container.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/pb_ds/tree_policy.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_pbds;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">TIn</span>&gt;</span></span><br><span class="line"><span class="keyword">using</span> indexed_set = tree&lt;</span><br><span class="line">                    TIn, null_type, less&lt;TIn&gt;,</span><br><span class="line">                    rb_tree_tag, tree_order_statistics_node_update&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">PBDS</span></span><br><span class="line"><span class="comment">-------------------------------------------------</span></span><br><span class="line"><span class="comment">1) insert(value)</span></span><br><span class="line"><span class="comment">2) erase(value)</span></span><br><span class="line"><span class="comment">3) order_of_key(value) // 0 based indexing</span></span><br><span class="line"><span class="comment">4) *find_by_order(position) // 0 based indexing</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">optimizeIO</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> nmax = <span class="number">1e4</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> LL LINF = <span class="number">1e17</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">to_str</span><span class="params">(LL x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stringstream ss;</span><br><span class="line">    ss&lt;&lt;x;</span><br><span class="line">    <span class="keyword">return</span> ss.<span class="built_in">str</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//bool cmp(const PII &amp;A,const PII &amp;B)</span></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;adj[nmax];</span><br><span class="line">set&lt;<span class="keyword">int</span>&gt;newGraph[nmax];</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">bool</span>&gt;visited;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;SCCMap;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; discov; <span class="comment">/** Discovery time in DFS **/</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; low; <span class="comment">/** min(all discovery time of subtree of a vertex u including the back-edge ancestors) **/</span></span><br><span class="line">vector&lt;PII&gt; articulationBridge;</span><br><span class="line"><span class="keyword">int</span> timer;</span><br><span class="line"><span class="keyword">int</span> scc = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initialize</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    timer = <span class="number">0</span>;</span><br><span class="line">    visited.<span class="built_in">assign</span>(nmax,<span class="literal">false</span>);</span><br><span class="line">    SCCMap.<span class="built_in">assign</span>(nmax,<span class="number">-1</span>);</span><br><span class="line">    discov.<span class="built_in">assign</span>(nmax,<span class="number">-1</span>);</span><br><span class="line">    low.<span class="built_in">assign</span>(nmax,<span class="number">-1</span>);</span><br><span class="line">    articulationBridge.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nmax; i++)</span><br><span class="line">        adj[i].<span class="built_in">clear</span>() , newGraph[i].<span class="built_in">clear</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visited[v] = <span class="literal">true</span>;</span><br><span class="line">    discov[v] = low[v] = timer++;</span><br><span class="line">    <span class="keyword">int</span> child = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> next:adj[v])</span><br><span class="line">    &#123;</span><br><span class="line">        child++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(next==p)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(visited[next])</span><br><span class="line">            low[v] = <span class="built_in">min</span>(low[v],discov[next]);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">dfs</span>(next,v);</span><br><span class="line">            low[v] = <span class="built_in">min</span>(low[v],low[next]);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(discov[v]&lt;low[next])</span><br><span class="line">            &#123;</span><br><span class="line">                articulationBridge.<span class="built_in">push_back</span>(&#123;v,next&#125;);</span><br><span class="line">                newGraph[v].<span class="built_in">erase</span>(next);</span><br><span class="line">                newGraph[next].<span class="built_in">erase</span>(v);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scc_dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visited[u] = <span class="literal">true</span>;</span><br><span class="line">    SCCMap[u] = scc;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> next:newGraph[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!visited[next])</span><br><span class="line">            <span class="built_in">scc_dfs</span>(next);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">optimizeIO</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> tc;</span><br><span class="line">    cin&gt;&gt;tc;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">1</span>;q&lt;=tc;q++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">initialize</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> n,m;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a,b;</span><br><span class="line">            cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">            adj[a].<span class="built_in">push_back</span>(b);</span><br><span class="line">            adj[b].<span class="built_in">push_back</span>(a);</span><br><span class="line"></span><br><span class="line">            newGraph[a].<span class="built_in">insert</span>(b);</span><br><span class="line">            newGraph[b].<span class="built_in">insert</span>(a);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[i])</span><br><span class="line">                <span class="built_in">dfs</span>(i,<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        visited.<span class="built_in">assign</span>(nmax,<span class="literal">false</span>);</span><br><span class="line">        scc = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[i])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">scc_dfs</span>(i);</span><br><span class="line">                scc++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> bridge:articulationBridge)</span><br><span class="line">        &#123;</span><br><span class="line">            numBridgesConToComp[SCCMap[bridge.F]]++;</span><br><span class="line">            numBridgesConToComp[SCCMap[bridge.S]]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cc = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;scc;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(numBridgesConToComp[i]==<span class="number">1</span>)</span><br><span class="line">                cc++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans = (cc+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;Case &quot;</span>&lt;&lt;q&lt;&lt;<span class="string">&quot;: &quot;</span>;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Idea"><span class="toc-number">1.</span> <span class="toc-text">Idea</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/LightOj1291/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/LightOj1291/&text=LightOj 1291 (Real Life Traffic)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/LightOj1291/&is_video=false&description=LightOj 1291 (Real Life Traffic)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LightOj 1291 (Real Life Traffic)&body=Check out this article: http://example.com/LightOj1291/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/LightOj1291/&title=LightOj 1291 (Real Life Traffic)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/LightOj1291/&name=LightOj 1291 (Real Life Traffic)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/LightOj1291/&t=LightOj 1291 (Real Life Traffic)"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    Md. Zarif Ul Alam
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
