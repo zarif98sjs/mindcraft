@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="&amp;nbsp;  2 things in mathematics always had me in awe . One was complex number ( thanks to Welch Labs and this awesome book ) and other one was linear algebra ( thanks to the one and only great Grant S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Hitchhiker&#39;s Guide to Linear Algebra">
+<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/LA/index.html">
+<meta property="og:site_name" content="MindCraft">
+<meta property="og:description" content="&amp;nbsp;  2 things in mathematics always had me in awe . One was complex number ( thanks to Welch Labs and this awesome book ) and other one was linear algebra ( thanks to the one and only great Grant S">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/LA/home.PNG">
+<meta property="og:image" content="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzarif98sjs%2FThe-Hitchhiker-s-Guide-to-Linear-Algebra&count_bg=%23ACA722&title_bg=%2300070C&icon=github.svg&icon_color=%23FFFFFF&title=views&edge_flat=false">
+<meta property="article:published_time" content="2021-02-04T18:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-27T11:44:49.994Z">
+<meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
+<meta property="article:tag" content="Learning Notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/LA/home.PNG">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>The Hitchhiker&#39;s Guide to Linear Algebra</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+         
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/TF_Advanced_P1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/DepthAwareVideoFrameInterpolation/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/LA/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/LA/&text=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/LA/&is_video=false&description=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Hitchhiker&#39;s Guide to Linear Algebra&body=Check out this article: https://github.com/zarif98sjs/mindcraft/LA/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/LA/&name=The Hitchhiker&#39;s Guide to Linear Algebra&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/LA/&t=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Website"><span class="toc-number">1.</span> <span class="toc-text">Website</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">2.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Contribution-amp-Future-Plan"><span class="toc-number"></span> <span class="toc-text">Contribution &amp; Future Plan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Table-of-Content"><span class="toc-number"></span> <span class="toc-text">Table of Content</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Introduction"><span class="toc-number">1.</span> <span class="toc-text">➕ Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Row-Reduction-amp-Echelon-Forms"><span class="toc-number">2.</span> <span class="toc-text">➕ Row Reduction &amp; Echelon Forms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-1-Echelon-amp-RREF"><span class="toc-number">3.</span> <span class="toc-text">🐍 Coding LA : Part 1 (Echelon &amp; RREF)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Vectors"><span class="toc-number">4.</span> <span class="toc-text">➕ Vectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Ax-B-and-Ax-0"><span class="toc-number">5.</span> <span class="toc-text">➕ Ax &#x3D; B and Ax &#x3D; 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Linear-Independence"><span class="toc-number">6.</span> <span class="toc-text">➕ Linear Independence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-The-Cool-Stuff-Linear-Transformations"><span class="toc-number">7.</span> <span class="toc-text">➕ The Cool Stuff (Linear Transformations)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-2-The-Cool-Stuffs-in-Application"><span class="toc-number">8.</span> <span class="toc-text">🐍 Coding LA : Part 2 (The Cool Stuffs in Application)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-3-Homogeneous-Coordinate"><span class="toc-number">9.</span> <span class="toc-text">🐍 Coding LA : Part 3 (Homogeneous Coordinate)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Matrix-Operations"><span class="toc-number">10.</span> <span class="toc-text">➕ Matrix Operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Inverse-of-a-Matrix"><span class="toc-number">11.</span> <span class="toc-text">➕ Inverse of a Matrix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-4-Inverse-Matrix"><span class="toc-number">12.</span> <span class="toc-text">🐍 Coding LA : Part 4 (Inverse Matrix)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Elementary-Matrices"><span class="toc-number">13.</span> <span class="toc-text">➕ Elementary Matrices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Matrix-Factorization"><span class="toc-number">14.</span> <span class="toc-text">➕ Matrix Factorization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-5-LU-Decomposition"><span class="toc-number">15.</span> <span class="toc-text">🐍 Coding LA : Part 5 (LU Decomposition)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Determinant"><span class="toc-number">16.</span> <span class="toc-text">➕ Determinant</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Vector-Spaces"><span class="toc-number">17.</span> <span class="toc-text">➕ Vector Spaces</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Change-of-Basis"><span class="toc-number">18.</span> <span class="toc-text">➕ Change of Basis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Eigenvalue-amp-Eigenvectors"><span class="toc-number">19.</span> <span class="toc-text">➕ Eigenvalue &amp; Eigenvectors</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources"><span class="toc-number"></span> <span class="toc-text">Resources</span></a>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        The Hitchhiker&#39;s Guide to Linear Algebra
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Md. Zarif Ul Alam</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-02-04T18:00:00.000Z" itemprop="datePublished">2021-02-05</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Mathematics/">Mathematics</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Mathematics/Linear-Algebra/">Linear Algebra</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>&nbsp;</p>
+<p><img src="home.PNG"></p>
+<p>2 things in mathematics always had me in awe . One was <em>complex number</em> ( thanks to <a target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF">Welch Labs</a> and <a target="_blank" rel="noopener" href="https://press.princeton.edu/books/paperback/9780691169248/an-imaginary-tale">this</a> awesome book ) and other one was <em>linear algebra</em> ( thanks to the one and only great <a target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Grant Sanderson</a> ) . From state of the art <em>Machine Learning</em> to the core of <em>Quantum Computing</em> , Linear Algebra is practically everywhere . In my level 2 in undergrad , I had to take Linear Algebra Course which was a course offered from the math department . To get some CS flavour and gain better intuition , I had to dive deep into other resources (details in the Resource section) . This is some kind of hybrid of personal note + blog of that time , contains some of the core stuffs that I had learnt and gained better intuition through this time . I have also implemented some of the basic LA algorithm stuffs in python for reference code along with the theories .</p>
+<p>Hopefully this serves as a good starting point / refresher for anyone who is starting / practising ML / QC or anyone who is interested in general .</p>
+<ul>
+<li><h2 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h2><a target="_blank" rel="noopener" href="https://tinyurl.com/zarif98sjsLA">https://tinyurl.com/zarif98sjsLA</a></li>
+<li><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a href="https://github.com/zarif98sjs/The-Hitchhiker-s-Guide-to-Linear-Algebra/tree/main/Code">https://github.com/zarif98sjs/The-Hitchhiker-s-Guide-to-Linear-Algebra/tree/main/Code</a></li>
+</ul>
+<h1 id="Contribution-amp-Future-Plan"><a href="#Contribution-amp-Future-Plan" class="headerlink" title="Contribution &amp; Future Plan"></a><strong>Contribution &amp; Future Plan</strong></h1><p>This is yet to be completed . In Future , I have plans to add more applications like in ML and QC . If you are interested to contribute with anything (writeup/code/simulation) , feel free to send pull request / let me know .</p>
+<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a><strong>Table of Content</strong></h1><h2 id="➕-Introduction"><a href="#➕-Introduction" class="headerlink" title="➕ Introduction"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Introduction-a4092131b794423aa27038cf9fb7d120">Introduction</a></h2><h2 id="➕-Row-Reduction-amp-Echelon-Forms"><a href="#➕-Row-Reduction-amp-Echelon-Forms" class="headerlink" title="➕ Row Reduction &amp; Echelon Forms"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Row-Reduction-Echelon-Forms-8a331eca1c4f476e9af3237d84162306">Row Reduction &amp; Echelon Forms</a></h2><h2 id="🐍-Coding-LA-Part-1-Echelon-amp-RREF"><a href="#🐍-Coding-LA-Part-1-Echelon-amp-RREF" class="headerlink" title="🐍 Coding LA : Part 1 (Echelon &amp; RREF)"></a>🐍 <a target="_blank" rel="noopener" href="https://www.notion.so/Coding-LA-Part-1-Echelon-RREF-bb4ed11a9cee45d0afdf854e5ec6b78f">Coding LA : Part 1 (Echelon &amp; RREF)</a></h2><hr>
+<h2 id="➕-Vectors"><a href="#➕-Vectors" class="headerlink" title="➕ Vectors"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Vectors-e79564b225a04691a75fb04606bbaff4">Vectors</a></h2><h2 id="➕-Ax-B-and-Ax-0"><a href="#➕-Ax-B-and-Ax-0" class="headerlink" title="➕ Ax = B and Ax = 0"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Ax-B-and-Ax-0-138a8c862d5e415a981a9e2559e7bc01">Ax = B and Ax = 0</a></h2><h2 id="➕-Linear-Independence"><a href="#➕-Linear-Independence" class="headerlink" title="➕ Linear Independence"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Linear-Independence-645683e79e454ecf8396b3d5a5432712">Linear Independence</a></h2><h2 id="➕-The-Cool-Stuff-Linear-Transformations"><a href="#➕-The-Cool-Stuff-Linear-Transformations" class="headerlink" title="➕ The Cool Stuff (Linear Transformations)"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/The-Cool-Stuff-Linear-Transformations-2a034ca510314f71abb555fd14a78f91">The Cool Stuff (Linear Transformations)</a></h2><h2 id="🐍-Coding-LA-Part-2-The-Cool-Stuffs-in-Application"><a href="#🐍-Coding-LA-Part-2-The-Cool-Stuffs-in-Application" class="headerlink" title="🐍 Coding LA : Part 2 (The Cool Stuffs in Application)"></a>🐍 <a target="_blank" rel="noopener" href="https://www.notion.so/Coding-LA-Part-2-The-Cool-Stuffs-in-Application-61b9dedc031b48c9b68e58acef0e3cb1">Coding LA : Part 2 (The Cool Stuffs in Application)</a></h2><h2 id="🐍-Coding-LA-Part-3-Homogeneous-Coordinate"><a href="#🐍-Coding-LA-Part-3-Homogeneous-Coordinate" class="headerlink" title="🐍 Coding LA : Part 3 (Homogeneous Coordinate)"></a>🐍 <a target="_blank" rel="noopener" href="https://www.notion.so/Coding-LA-Part-3-Homogeneous-Coordinate-072633b36466478d805413b0c10f975b">Coding LA : Part 3 (Homogeneous Coordinate)</a></h2><hr>
+<h2 id="➕-Matrix-Operations"><a href="#➕-Matrix-Operations" class="headerlink" title="➕ Matrix Operations"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Matrix-Operations-d4d2074591b7434bbcbc4dbdd4d96612">Matrix Operations</a></h2><h2 id="➕-Inverse-of-a-Matrix"><a href="#➕-Inverse-of-a-Matrix" class="headerlink" title="➕ Inverse of a Matrix"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Inverse-of-a-Matrix-0abaf212388c4002b92305c55aa7c031">Inverse of a Matrix</a></h2><h2 id="🐍-Coding-LA-Part-4-Inverse-Matrix"><a href="#🐍-Coding-LA-Part-4-Inverse-Matrix" class="headerlink" title="🐍 Coding LA : Part 4 (Inverse Matrix)"></a>🐍 <a target="_blank" rel="noopener" href="https://www.notion.so/Coding-LA-Part-4-Inverse-Matrix-dedef7c20b01417e84e6c04964e25eb2">Coding LA : Part 4 (Inverse Matrix)</a></h2><hr>
+<h2 id="➕-Elementary-Matrices"><a href="#➕-Elementary-Matrices" class="headerlink" title="➕ Elementary Matrices"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Elementary-Matrices-630288049c02453cab88270807436f23">Elementary Matrices</a></h2><h2 id="➕-Matrix-Factorization"><a href="#➕-Matrix-Factorization" class="headerlink" title="➕ Matrix Factorization"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Matrix-Factorization-965dd45b4ff6468c8bf5be16f486e204">Matrix Factorization</a></h2><h2 id="🐍-Coding-LA-Part-5-LU-Decomposition"><a href="#🐍-Coding-LA-Part-5-LU-Decomposition" class="headerlink" title="🐍 Coding LA : Part 5 (LU Decomposition)"></a>🐍 <a target="_blank" rel="noopener" href="https://www.notion.so/Coding-LA-Part-5-LU-Decomposition-2f83c8902912403f8c55b461a0ab71c9">Coding LA : Part 5 (LU Decomposition)</a></h2><hr>
+<h2 id="➕-Determinant"><a href="#➕-Determinant" class="headerlink" title="➕ Determinant"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Determinant-47b784f28190412e834632451e835655">Determinant</a></h2><h2 id="➕-Vector-Spaces"><a href="#➕-Vector-Spaces" class="headerlink" title="➕ Vector Spaces"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Vector-Spaces-6cd1f0443fb34293a35bd14c8ea76d07">Vector Spaces</a></h2><hr>
+<h2 id="➕-Change-of-Basis"><a href="#➕-Change-of-Basis" class="headerlink" title="➕ Change of Basis"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Vector-Spaces-6cd1f0443fb34293a35bd14c8ea76d07">Change of Basis</a></h2><h2 id="➕-Eigenvalue-amp-Eigenvectors"><a href="#➕-Eigenvalue-amp-Eigenvectors" class="headerlink" title="➕ Eigenvalue &amp; Eigenvectors"></a>➕ <a target="_blank" rel="noopener" href="https://www.notion.so/Eigenvalue-Eigenvectors-d79751c45596442d9f6f9e572d8b2ec8">Eigenvalue &amp; Eigenvectors</a></h2><h1 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a><strong>Resources</strong></h1><ul>
+<li><a target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of Linear Algebra : 3Blue1Brown</a></li>
+<li><a target="_blank" rel="noopener" href="https://youtube.com/playlist?list=PLE7DDD91010BC51F8">MIT 18.06 Linear Algebra, Spring 2005 : Gilbert Strang</a></li>
+<li><a target="_blank" rel="noopener" href="https://math.berkeley.edu/~yonah/files/Linear%20Algebra.pdf">Linear Algebra and Its Applications : David C Lay, Judi J. McDonald, and Steven R Lay</a></li>
+<li><a target="_blank" rel="noopener" href="https://math.mit.edu/~gs/linearalgebra/">Introduction to Linear Algebra : Gilbert Strang</a></li>
+<li><a target="_blank" rel="noopener" href="https://codingthematrix.com/">Coding the Matrix: Linear Algebra Through Applications to Computer Science</a></li>
+</ul>
+<p>&nbsp;<br>&nbsp;</p>
+<!-- <p align="center">
+<a target="_blank" rel="noopener" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzarif98sjs%2FThe-Hitchhiker-s-Guide-to-Linear-Algebra&count_bg=%23ACA722&title_bg=%2300070C&icon=github.svg&icon_color=%23FFFFFF&title=views&edge_flat=false"/></a>
+</p> -->
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+         
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Website"><span class="toc-number">1.</span> <span class="toc-text">Website</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">2.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Contribution-amp-Future-Plan"><span class="toc-number"></span> <span class="toc-text">Contribution &amp; Future Plan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Table-of-Content"><span class="toc-number"></span> <span class="toc-text">Table of Content</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Introduction"><span class="toc-number">1.</span> <span class="toc-text">➕ Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Row-Reduction-amp-Echelon-Forms"><span class="toc-number">2.</span> <span class="toc-text">➕ Row Reduction &amp; Echelon Forms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-1-Echelon-amp-RREF"><span class="toc-number">3.</span> <span class="toc-text">🐍 Coding LA : Part 1 (Echelon &amp; RREF)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Vectors"><span class="toc-number">4.</span> <span class="toc-text">➕ Vectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Ax-B-and-Ax-0"><span class="toc-number">5.</span> <span class="toc-text">➕ Ax &#x3D; B and Ax &#x3D; 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Linear-Independence"><span class="toc-number">6.</span> <span class="toc-text">➕ Linear Independence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-The-Cool-Stuff-Linear-Transformations"><span class="toc-number">7.</span> <span class="toc-text">➕ The Cool Stuff (Linear Transformations)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-2-The-Cool-Stuffs-in-Application"><span class="toc-number">8.</span> <span class="toc-text">🐍 Coding LA : Part 2 (The Cool Stuffs in Application)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-3-Homogeneous-Coordinate"><span class="toc-number">9.</span> <span class="toc-text">🐍 Coding LA : Part 3 (Homogeneous Coordinate)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Matrix-Operations"><span class="toc-number">10.</span> <span class="toc-text">➕ Matrix Operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Inverse-of-a-Matrix"><span class="toc-number">11.</span> <span class="toc-text">➕ Inverse of a Matrix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-4-Inverse-Matrix"><span class="toc-number">12.</span> <span class="toc-text">🐍 Coding LA : Part 4 (Inverse Matrix)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Elementary-Matrices"><span class="toc-number">13.</span> <span class="toc-text">➕ Elementary Matrices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Matrix-Factorization"><span class="toc-number">14.</span> <span class="toc-text">➕ Matrix Factorization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%8D-Coding-LA-Part-5-LU-Decomposition"><span class="toc-number">15.</span> <span class="toc-text">🐍 Coding LA : Part 5 (LU Decomposition)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Determinant"><span class="toc-number">16.</span> <span class="toc-text">➕ Determinant</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Vector-Spaces"><span class="toc-number">17.</span> <span class="toc-text">➕ Vector Spaces</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Change-of-Basis"><span class="toc-number">18.</span> <span class="toc-text">➕ Change of Basis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9E%95-Eigenvalue-amp-Eigenvectors"><span class="toc-number">19.</span> <span class="toc-text">➕ Eigenvalue &amp; Eigenvectors</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources"><span class="toc-number"></span> <span class="toc-text">Resources</span></a>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/LA/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/LA/&text=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/LA/&is_video=false&description=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Hitchhiker&#39;s Guide to Linear Algebra&body=Check out this article: https://github.com/zarif98sjs/mindcraft/LA/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/LA/&title=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/LA/&name=The Hitchhiker&#39;s Guide to Linear Algebra&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/LA/&t=The Hitchhiker&#39;s Guide to Linear Algebra"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    Md. Zarif Ul Alam
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+         
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/zarif98sjs/mindcraft/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

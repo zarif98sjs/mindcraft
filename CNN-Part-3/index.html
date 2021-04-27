@@ -6,46 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Convolutional Neural Network (CNN) - Part 3Feature Extraction with Data AugmentationOld Preprocessings1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries i">
+    <meta name="description" content="Method 1 Part 2 : Feature Extraction with Data AugmentationOld Preprocessings1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MindCraft">
-<meta property="og:url" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/index.html">
+<meta property="og:title" content="CNN : Watching the world through Neural Networks - Part 3">
+<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/index.html">
 <meta property="og:site_name" content="MindCraft">
-<meta property="og:description" content="Convolutional Neural Network (CNN) - Part 3Feature Extraction with Data AugmentationOld Preprocessings1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries i">
+<meta property="og:description" content="Method 1 Part 2 : Feature Extraction with Data AugmentationOld Preprocessings1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined b">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/output_34_0.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/output_34_1.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/output_34_0.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/output_34_1.png">
 <meta property="og:image" content="attachment:image.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/output_50_0.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/output_50_1.png">
-<meta property="article:published_time" content="2021-04-27T06:00:07.342Z">
-<meta property="article:modified_time" content="2020-12-23T16:16:10.000Z">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/output_50_0.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/output_50_1.png">
+<meta property="article:published_time" content="2020-07-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-27T07:44:30.519Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
+<meta property="article:tag" content="Learning Notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zarif98sjs.github.io/dummy/CNN-Part-3/output_34_0.png">
+<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/CNN-Part-3/output_34_0.png">
     
     
       
         
-          <link rel="shortcut icon" href="/dummy/images/favicon.ico">
+          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/dummy/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/dummy/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
         
       
     
     <!-- title -->
-    <title>MindCraft</title>
+    <title>CNN : Watching the world through Neural Networks - Part 3</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/dummy/css/style.css">
+<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -76,11 +78,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -88,10 +90,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/dummy/BinaryClassification/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/dummy/CNN-Part-2/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/CNN-Part-2/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -104,22 +106,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/CNN-Part-3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://zarif98sjs.github.io/dummy/CNN-Part-3/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/CNN-Part-3/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&text=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&is_video=false&description=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CNN : Watching the world through Neural Networks - Part 3&body=Check out this article: https://github.com/zarif98sjs/mindcraft/CNN-Part-3/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&name=CNN : Watching the world through Neural Networks - Part 3&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&t=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Convolutional-Neural-Network-CNN-Part-3"><span class="toc-number">1.</span> <span class="toc-text">Convolutional Neural Network (CNN) - Part 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature-Extraction-with-Data-Augmentation"><span class="toc-number">1.1.</span> <span class="toc-text">Feature Extraction with Data Augmentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Old-Preprocessings"><span class="toc-number">1.2.</span> <span class="toc-text">Old Preprocessings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1"><span class="toc-number">1.3.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2"><span class="toc-number">1.4.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.5.</span> <span class="toc-text">Prediction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-2-Fine-Tuning"><span class="toc-number">2.</span> <span class="toc-text">Method #2 : Fine Tuning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1-1"><span class="toc-number">2.1.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2-1"><span class="toc-number">2.2.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-3"><span class="toc-number">2.3.</span> <span class="toc-text">Important Note #3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">2.4.</span> <span class="toc-text">Conclusion</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-1-Part-2-Feature-Extraction-with-Data-Augmentation"><span class="toc-number">1.</span> <span class="toc-text">Method 1 Part 2 : Feature Extraction with Data Augmentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Old-Preprocessings"><span class="toc-number">1.1.</span> <span class="toc-text">Old Preprocessings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1"><span class="toc-number">1.2.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2"><span class="toc-number">1.3.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.4.</span> <span class="toc-text">Prediction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-2-Fine-Tuning"><span class="toc-number">2.</span> <span class="toc-text">Method #2 : Fine Tuning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1-1"><span class="toc-number">2.1.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2-1"><span class="toc-number">2.2.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-3"><span class="toc-number">2.3.</span> <span class="toc-text">Important Note #3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">3.</span> <span class="toc-text">Conclusion</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -131,7 +133,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        
+        CNN : Watching the world through Neural Networks - Part 3
     </h1>
 
 
@@ -143,22 +145,32 @@
       
     <div class="postdate">
       
-        <time datetime="2021-04-27T06:00:07.342Z" itemprop="datePublished">2021-04-27</time>
+        <time datetime="2020-07-01T00:00:00.000Z" itemprop="datePublished">2020-07-01</time>
         
       
     </div>
 
 
       
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/">Machine Learning</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/Tensorflow/">Tensorflow</a>
+    </div>
+
 
       
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
+    </div>
+
 
     </div>
   </header>
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="Convolutional-Neural-Network-CNN-Part-3"><a href="#Convolutional-Neural-Network-CNN-Part-3" class="headerlink" title="Convolutional Neural Network (CNN) - Part 3"></a>Convolutional Neural Network (CNN) - Part 3</h1><h2 id="Feature-Extraction-with-Data-Augmentation"><a href="#Feature-Extraction-with-Data-Augmentation" class="headerlink" title="Feature Extraction with Data Augmentation"></a>Feature Extraction with Data Augmentation</h2><h2 id="Old-Preprocessings"><a href="#Old-Preprocessings" class="headerlink" title="Old Preprocessings"></a>Old Preprocessings</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here&#x27;s several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only &quot;../input/&quot; directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> dirname, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;/kaggle/input&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        <span class="built_in">print</span>(os.path.join(dirname, filename))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using &quot;Save &amp; Run All&quot; </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won&#x27;t be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
+    <h1 id="Method-1-Part-2-Feature-Extraction-with-Data-Augmentation"><a href="#Method-1-Part-2-Feature-Extraction-with-Data-Augmentation" class="headerlink" title="Method 1 Part 2 : Feature Extraction with Data Augmentation"></a>Method 1 Part 2 : Feature Extraction with Data Augmentation</h1><h2 id="Old-Preprocessings"><a href="#Old-Preprocessings" class="headerlink" title="Old Preprocessings"></a>Old Preprocessings</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here&#x27;s several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only &quot;../input/&quot; directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> dirname, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;/kaggle/input&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        <span class="built_in">print</span>(os.path.join(dirname, filename))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using &quot;Save &amp; Run All&quot; </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won&#x27;t be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
 
 <pre><code>/kaggle/input/dogs-vs-cats-redux-kernels-edition/sample_submission.csv
 /kaggle/input/dogs-vs-cats-redux-kernels-edition/train.zip
@@ -288,8 +300,8 @@ Non-trainable params: 0
 _________________________________________________________________
 </code></pre>
 <p><strong>As you can see, the convolutional base of VGG16 has 14,714,688 parameters, which is very large. The classifier you’re adding on top has 2 million parameters</strong></p>
-<h2 id="Important-Note-1"><a href="#Important-Note-1" class="headerlink" title="Important Note #1"></a>Important Note #1</h2><p><strong>Before compiling and training the model, it’s very important to <em>freeze</em> the convolutional base. Freezing a layer or set of layers means <em>preventing their weights from being updated during training</em>. If you don’t do this, then the representations that were previously learned by the convolutional base will be modified during training</strong></p>
-<p><strong>Because the Dense layers on top are randomly initialized, very large weight updates would be propagated through the network, effectively destroying the representations previously learned</strong></p>
+<h2 id="Important-Note-1"><a href="#Important-Note-1" class="headerlink" title="Important Note #1"></a>Important Note #1</h2><p>Before compiling and training the model, it’s very important to <em>freeze</em> the convolutional base. Freezing a layer or set of layers means <em>preventing their weights from being updated during training</em>. If you don’t do this, then the representations that were previously learned by the convolutional base will be modified during training</p>
+<p>Because the Dense layers on top are randomly initialized, very large weight updates would be propagated through the network, effectively destroying the representations previously learned</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;This is the number of trainable weights &#x27;</span></span><br><span class="line">      <span class="string">&#x27;before freezing the conv base:&#x27;</span>, <span class="built_in">len</span>(model.trainable_weights))</span><br></pre></td></tr></table></figure>
 
 <pre><code>This is the number of trainable weights before freezing the conv base: 30
@@ -302,8 +314,8 @@ _________________________________________________________________
 
 <pre><code>This is the number of trainable weights after freezing the conv base: 4
 </code></pre>
-<p><strong>With this setup, only the weights from the two Dense layers that you added will be trained. That’s a total of four weight tensors: two per layer (the main weight matrix and the bias vector)</strong></p>
-<h2 id="Important-Note-2"><a href="#Important-Note-2" class="headerlink" title="Important Note #2"></a>Important Note #2</h2><p><strong>Note that in order for these changes to take effect, you must first compile the model. If you ever modify weight trainability after compilation, you should then recompile the model, or these changes will be ignored</strong></p>
+<p>With this setup, only the weights from the two Dense layers that you added will be trained. That’s a total of four weight tensors: two per layer (the main weight matrix and the bias vector)</p>
+<h2 id="Important-Note-2"><a href="#Important-Note-2" class="headerlink" title="Important Note #2"></a>Important Note #2</h2><p>Note that in order for these changes to take effect, you must first compile the model. If you ever modify weight trainability after compilation, you should then recompile the model, or these changes will be ignored</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">train_datagen = ImageDataGenerator(</span><br><span class="line">      rescale=<span class="number">1.</span>/<span class="number">255</span>,</span><br><span class="line">      rotation_range=<span class="number">40</span>,</span><br><span class="line">      width_shift_range=<span class="number">0.2</span>,</span><br><span class="line">      height_shift_range=<span class="number">0.2</span>,</span><br><span class="line">      shear_range=<span class="number">0.2</span>,</span><br><span class="line">      zoom_range=<span class="number">0.2</span>,</span><br><span class="line">      horizontal_flip=<span class="literal">True</span>,</span><br><span class="line">      fill_mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note that the validation data should not be augmented!</span></span><br><span class="line">test_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -393,11 +405,11 @@ Epoch 30/30
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">counter = <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(test_images_dogs_cats) + <span class="number">1</span>)</span><br><span class="line">solution = pd.DataFrame(&#123;<span class="string">&quot;id&quot;</span>: counter, <span class="string">&quot;label&quot;</span>:<span class="built_in">list</span>(prediction_probabilities)&#125;)</span><br><span class="line">cols = [<span class="string">&#x27;label&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line">    solution[col] = solution[col].<span class="built_in">map</span>(<span class="keyword">lambda</span> x: <span class="built_in">str</span>(x).lstrip(<span class="string">&#x27;[&#x27;</span>).rstrip(<span class="string">&#x27;]&#x27;</span>)).astype(<span class="built_in">float</span>)</span><br><span class="line"></span><br><span class="line">solution.to_csv(<span class="string">&quot;dogsVScats_TL_VGG16_feature_extraction_with_augmentation.csv&quot;</span>, index = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="Method-2-Fine-Tuning"><a href="#Method-2-Fine-Tuning" class="headerlink" title="Method #2 : Fine Tuning"></a>Method #2 : Fine Tuning</h1><p><strong>Fine-tuning consists of unfreezing a few of the top layers of a frozen model base used for feature extraction, and jointly training both the newly added part of the model (in this case, the fully connected classifier) and these top layers</strong></p>
-<p><strong>This is called fine-tuning because it slightly adjusts the more abstract representations of the model being reused, in order to make them more relevant for the problem at hand</strong></p>
+<h1 id="Method-2-Fine-Tuning"><a href="#Method-2-Fine-Tuning" class="headerlink" title="Method #2 : Fine Tuning"></a>Method #2 : Fine Tuning</h1><p>Fine-tuning consists of unfreezing a few of the top layers of a frozen model base used for feature extraction, and jointly training both the newly added part of the model (in this case, the fully connected classifier) and these top layers</p>
+<p>This is called fine-tuning because it slightly adjusts the more abstract representations of the model being reused, in order to make them more relevant for the problem at hand</p>
 <p><img src="attachment:image.png" alt="image.png"></p>
-<h2 id="Important-Note-1-1"><a href="#Important-Note-1-1" class="headerlink" title="Important Note #1"></a>Important Note #1</h2><p><strong>In the last method we had to freeze the convolutional base to be able to train the classifier on top . Otherwise , if it was not trained , the error signal propagating through the network during the training will be too large , and previously learned representaions will be destroyed .</strong></p>
-<p><strong>For this very reason , in case of fine tuning we can only do this once we hace trained our classifier . Otherwise , it will just perform worse .</strong></p>
+<h2 id="Important-Note-1-1"><a href="#Important-Note-1-1" class="headerlink" title="Important Note #1"></a>Important Note #1</h2><p>In the last method we had to freeze the convolutional base to be able to train the classifier on top . Otherwise , if it was not trained , the error signal propagating through the network during the training will be too large , and previously learned representaions will be destroyed .</p>
+<p>For this very reason , in case of fine tuning we can only do this once we hace trained our classifier . Otherwise , it will just perform worse .</p>
 <p><strong>So , here are the steps for fine tuning :</strong></p>
 <ul>
 <li>Add your custom network on top of an already-trained base network</li>
@@ -465,7 +477,7 @@ _________________________________________________________________
 <li><p>The more parameters you’re training, the more you’re at risk of overfitting. The convolutional base has 15 million parameters, so it would be risky to attempt to train it on your small dataset</p>
 </li>
 </ul>
-<h2 id="Important-Note-3"><a href="#Important-Note-3" class="headerlink" title="Important Note #3"></a>Important Note #3</h2><p><strong>The learning rate is low , The reason for using a low learning rate is that you want to limit the magnitude of the modifications you make to the representations of the three layers you’re fine-tuning . Updates that are too large may harm these representations.</strong></p>
+<h2 id="Important-Note-3"><a href="#Important-Note-3" class="headerlink" title="Important Note #3"></a>Important Note #3</h2><p>The learning rate is low , The reason for using a low learning rate is that you want to limit the magnitude of the modifications you make to the representations of the three layers you’re fine-tuning . Updates that are too large may harm these representations.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;binary_crossentropy&#x27;</span>,</span><br><span class="line">              optimizer=optimizers.RMSprop(lr=<span class="number">1e-5</span>),</span><br><span class="line">              metrics=[<span class="string">&#x27;acc&#x27;</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">history = model.fit_generator(</span><br><span class="line">      train_generator,</span><br><span class="line">      steps_per_epoch=np.ceil(nb_train_samples/batch_size),</span><br><span class="line">      epochs=<span class="number">100</span>,</span><br><span class="line">      validation_data=validation_generator,</span><br><span class="line">      validation_steps=np.ceil(nb_validation_samples/batch_size))</span><br></pre></td></tr></table></figure>
 
 <pre><code>Epoch 1/100
@@ -689,7 +701,7 @@ Epoch 100/100
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">counter = <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(test_images_dogs_cats) + <span class="number">1</span>)</span><br><span class="line">solution = pd.DataFrame(&#123;<span class="string">&quot;id&quot;</span>: counter, <span class="string">&quot;label&quot;</span>:<span class="built_in">list</span>(prediction_probabilities)&#125;)</span><br><span class="line">cols = [<span class="string">&#x27;label&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line">    solution[col] = solution[col].<span class="built_in">map</span>(<span class="keyword">lambda</span> x: <span class="built_in">str</span>(x).lstrip(<span class="string">&#x27;[&#x27;</span>).rstrip(<span class="string">&#x27;]&#x27;</span>)).astype(<span class="built_in">float</span>)</span><br><span class="line"></span><br><span class="line">solution.to_csv(<span class="string">&quot;dogsVScats_TL_VGG16_fine_tuning.csv&quot;</span>, index = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ul>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><ul>
 <li>Convnets are the best type of machine-learning models for computer-vision tasks. It’s possible to train one from scratch even on a very small dataset, with decent results.</li>
 <li>On a small dataset, <strong>overfitting</strong> will be the main issue. <strong>Data augmentation</strong> is a powerful way to fight overfitting when you’re working with image data.</li>
 <li>It’s easy to reuse an existing convnet on a new dataset via <strong>feature extraction</strong>. This is a valuable technique for working with small image datasets.</li>
@@ -708,32 +720,32 @@ Epoch 100/100
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Convolutional-Neural-Network-CNN-Part-3"><span class="toc-number">1.</span> <span class="toc-text">Convolutional Neural Network (CNN) - Part 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature-Extraction-with-Data-Augmentation"><span class="toc-number">1.1.</span> <span class="toc-text">Feature Extraction with Data Augmentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Old-Preprocessings"><span class="toc-number">1.2.</span> <span class="toc-text">Old Preprocessings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1"><span class="toc-number">1.3.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2"><span class="toc-number">1.4.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.5.</span> <span class="toc-text">Prediction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-2-Fine-Tuning"><span class="toc-number">2.</span> <span class="toc-text">Method #2 : Fine Tuning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1-1"><span class="toc-number">2.1.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2-1"><span class="toc-number">2.2.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-3"><span class="toc-number">2.3.</span> <span class="toc-text">Important Note #3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">2.4.</span> <span class="toc-text">Conclusion</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-1-Part-2-Feature-Extraction-with-Data-Augmentation"><span class="toc-number">1.</span> <span class="toc-text">Method 1 Part 2 : Feature Extraction with Data Augmentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Old-Preprocessings"><span class="toc-number">1.1.</span> <span class="toc-text">Old Preprocessings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1"><span class="toc-number">1.2.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2"><span class="toc-number">1.3.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.4.</span> <span class="toc-text">Prediction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Method-2-Fine-Tuning"><span class="toc-number">2.</span> <span class="toc-text">Method #2 : Fine Tuning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-1-1"><span class="toc-number">2.1.</span> <span class="toc-text">Important Note #1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-2-1"><span class="toc-number">2.2.</span> <span class="toc-text">Important Note #2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Important-Note-3"><span class="toc-number">2.3.</span> <span class="toc-text">Important Note #3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">3.</span> <span class="toc-text">Conclusion</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/CNN-Part-3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://zarif98sjs.github.io/dummy/CNN-Part-3/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/CNN-Part-3/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/CNN-Part-3/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&text=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&is_video=false&description=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CNN : Watching the world through Neural Networks - Part 3&body=Check out this article: https://github.com/zarif98sjs/mindcraft/CNN-Part-3/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&title=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&name=CNN : Watching the world through Neural Networks - Part 3&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/CNN-Part-3/&t=CNN : Watching the world through Neural Networks - Part 3"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -761,11 +773,11 @@ Epoch 100/100
     <nav>
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -813,7 +825,7 @@ Epoch 100/100
   </script>
 
 
-<script src="/dummy/js/main.js"></script>
+<script src="/zarif98sjs/mindcraft/js/main.js"></script>
 
 <!-- search -->
 

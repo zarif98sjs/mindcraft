@@ -6,42 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Machine Learning with Tensorflow : Part 2 (Gradient)1import tensorflow as tf  Gradient : tf.GradientTape123tf.GradientTape(    persistent&#x3D;False, watch_accessed_variables&#x3D;True)   1234x &#x3D; tf.c">
+    <meta name="description" content="1import tensorflow as tf  Gradient : tf.GradientTape123tf.GradientTape(    persistent&#x3D;False, watch_accessed_variables&#x3D;True)   1234x &#x3D; tf.constant(2.0)with tf.GradientTape() as tape:    tape.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MindCraft">
-<meta property="og:url" content="https://zarif98sjs.github.io/dummy/TF_Basics_P2/index.html">
+<meta property="og:title" content="Tensorflow Basics : Part 2">
+<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/index.html">
 <meta property="og:site_name" content="MindCraft">
-<meta property="og:description" content="Machine Learning with Tensorflow : Part 2 (Gradient)1import tensorflow as tf  Gradient : tf.GradientTape123tf.GradientTape(    persistent&#x3D;False, watch_accessed_variables&#x3D;True)   1234x &#x3D; tf.c">
+<meta property="og:description" content="1import tensorflow as tf  Gradient : tf.GradientTape123tf.GradientTape(    persistent&#x3D;False, watch_accessed_variables&#x3D;True)   1234x &#x3D; tf.constant(2.0)with tf.GradientTape() as tape:    tape.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/TF_Basics_P2/output_20_1.png">
-<meta property="article:published_time" content="2021-04-27T05:58:10.658Z">
-<meta property="article:modified_time" content="2020-12-23T15:26:34.000Z">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/output_20_1.png">
+<meta property="article:published_time" content="2020-06-27T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-27T08:27:54.346Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
+<meta property="article:tag" content="Learning Notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zarif98sjs.github.io/dummy/TF_Basics_P2/output_20_1.png">
+<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/output_20_1.png">
     
     
       
         
-          <link rel="shortcut icon" href="/dummy/images/favicon.ico">
+          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/dummy/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/dummy/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
         
       
     
     <!-- title -->
-    <title>MindCraft</title>
+    <title>Tensorflow Basics : Part 2</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/dummy/css/style.css">
+<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -72,11 +74,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -84,10 +86,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/dummy/CNN-Part-1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/BinaryClassification/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/dummy/DepthAwareVideoFrameInterpolation/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/TF_Basics_P1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -100,22 +102,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/TF_Basics_P2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://zarif98sjs.github.io/dummy/TF_Basics_P2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&text=Tensorflow Basics : Part 2"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&is_video=false&description=Tensorflow Basics : Part 2"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 2&body=Check out this article: https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&name=Tensorflow Basics : Part 2&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&t=Tensorflow Basics : Part 2"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-with-Tensorflow-Part-2-Gradient"><span class="toc-number">1.</span> <span class="toc-text">Machine Learning with Tensorflow : Part 2 (Gradient)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradient-tf-GradientTape"><span class="toc-number">1.1.</span> <span class="toc-text">Gradient : tf.GradientTape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Regression-using-GradientTape"><span class="toc-number">1.2.</span> <span class="toc-text">Linear Regression using GradientTape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neural-Networks-with-GradientTape"><span class="toc-number">1.3.</span> <span class="toc-text">Neural Networks with GradientTape</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-tf-GradientTape"><span class="toc-number">1.</span> <span class="toc-text">Gradient : tf.GradientTape</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-in-transfer-learning"><span class="toc-number">1.1.</span> <span class="toc-text">Usage : in transfer learning</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linear-Regression-using-GradientTape"><span class="toc-number">2.</span> <span class="toc-text">Linear Regression using GradientTape</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Neural-Networks-with-GradientTape"><span class="toc-number">3.</span> <span class="toc-text">Neural Networks with GradientTape</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -127,7 +129,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        
+        Tensorflow Basics : Part 2
     </h1>
 
 
@@ -139,24 +141,34 @@
       
     <div class="postdate">
       
-        <time datetime="2021-04-27T05:58:10.658Z" itemprop="datePublished">2021-04-27</time>
+        <time datetime="2020-06-27T00:00:00.000Z" itemprop="datePublished">2020-06-27</time>
         
       
     </div>
 
 
       
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/">Machine Learning</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/Tensorflow/">Tensorflow</a>
+    </div>
+
 
       
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
+    </div>
+
 
     </div>
   </header>
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="Machine-Learning-with-Tensorflow-Part-2-Gradient"><a href="#Machine-Learning-with-Tensorflow-Part-2-Gradient" class="headerlink" title="Machine Learning with Tensorflow : Part 2 (Gradient)"></a>Machine Learning with Tensorflow : Part 2 (Gradient)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
+    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
 
-<h2 id="Gradient-tf-GradientTape"><a href="#Gradient-tf-GradientTape" class="headerlink" title="Gradient : tf.GradientTape"></a>Gradient : <code>tf.GradientTape</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.GradientTape(</span><br><span class="line">    persistent&#x3D;False, watch_accessed_variables&#x3D;True</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="Gradient-tf-GradientTape"><a href="#Gradient-tf-GradientTape" class="headerlink" title="Gradient : tf.GradientTape"></a>Gradient : <code>tf.GradientTape</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.GradientTape(</span><br><span class="line">    persistent&#x3D;False, watch_accessed_variables&#x3D;True</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = tf.constant(<span class="number">2.0</span>)</span><br><span class="line"><span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> tape:</span><br><span class="line">    tape.watch(x)</span><br><span class="line">    y = x**<span class="number">2</span> + <span class="number">2</span>*x + <span class="number">5</span></span><br></pre></td></tr></table></figure>
@@ -184,8 +196,7 @@ Gradient is: 12.0
 18.0
 </code></pre>
 <p><strong>we can set set the default watch condition to false , by that we can compute<br>gradient for only the variables we want</strong></p>
-<p><strong>Usage : in transfer learning</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## code same as before , but nothing is computed this time</span></span><br><span class="line">x = tf.Variable(<span class="number">2.0</span>)</span><br><span class="line"><span class="keyword">with</span> tf.GradientTape(watch_accessed_variables=<span class="literal">False</span>) <span class="keyword">as</span> tape:</span><br><span class="line">    y = x**<span class="number">2</span> + <span class="number">2</span>*x + <span class="number">5</span></span><br><span class="line">    gradient = tape.gradient(y, x)</span><br><span class="line">    <span class="built_in">print</span>(gradient)</span><br></pre></td></tr></table></figure>
+<h2 id="Usage-in-transfer-learning"><a href="#Usage-in-transfer-learning" class="headerlink" title="Usage : in transfer learning"></a><strong>Usage : in transfer learning</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## code same as before , but nothing is computed this time</span></span><br><span class="line">x = tf.Variable(<span class="number">2.0</span>)</span><br><span class="line"><span class="keyword">with</span> tf.GradientTape(watch_accessed_variables=<span class="literal">False</span>) <span class="keyword">as</span> tape:</span><br><span class="line">    y = x**<span class="number">2</span> + <span class="number">2</span>*x + <span class="number">5</span></span><br><span class="line">    gradient = tape.gradient(y, x)</span><br><span class="line">    <span class="built_in">print</span>(gradient)</span><br></pre></td></tr></table></figure>
 
 <pre><code>None
 </code></pre>
@@ -236,7 +247,7 @@ RuntimeError: GradientTape.gradient can only be called once on non-persistent ta
 <pre><code>12.0
 12.0
 </code></pre>
-<h2 id="Linear-Regression-using-GradientTape"><a href="#Linear-Regression-using-GradientTape" class="headerlink" title="Linear Regression using GradientTape"></a>Linear Regression using GradientTape</h2><ul>
+<h1 id="Linear-Regression-using-GradientTape"><a href="#Linear-Regression-using-GradientTape" class="headerlink" title="Linear Regression using GradientTape"></a>Linear Regression using GradientTape</h1><ul>
 <li><strong>prepare train data</strong></li>
 <li><strong>define train variables</strong></li>
 <li><strong>define step/update function</strong><ul>
@@ -250,7 +261,7 @@ RuntimeError: GradientTape.gradient can only be called once on non-persistent ta
 <pre><code>y ≈ 10.053751945495605x + 5.000401973724365
 </code></pre>
 <p><img src="output_20_1.png" alt="png"></p>
-<h2 id="Neural-Networks-with-GradientTape"><a href="#Neural-Networks-with-GradientTape" class="headerlink" title="Neural Networks with GradientTape"></a>Neural Networks with GradientTape</h2><ul>
+<h1 id="Neural-Networks-with-GradientTape"><a href="#Neural-Networks-with-GradientTape" class="headerlink" title="Neural Networks with GradientTape"></a>Neural Networks with GradientTape</h1><ul>
 <li><strong>prepare train data</strong></li>
 <li><strong>define hyperparameters</strong></li>
 <li><strong>define neural network model</strong></li>
@@ -286,32 +297,32 @@ Accuracy: 0.9911
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-with-Tensorflow-Part-2-Gradient"><span class="toc-number">1.</span> <span class="toc-text">Machine Learning with Tensorflow : Part 2 (Gradient)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradient-tf-GradientTape"><span class="toc-number">1.1.</span> <span class="toc-text">Gradient : tf.GradientTape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Regression-using-GradientTape"><span class="toc-number">1.2.</span> <span class="toc-text">Linear Regression using GradientTape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neural-Networks-with-GradientTape"><span class="toc-number">1.3.</span> <span class="toc-text">Neural Networks with GradientTape</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-tf-GradientTape"><span class="toc-number">1.</span> <span class="toc-text">Gradient : tf.GradientTape</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-in-transfer-learning"><span class="toc-number">1.1.</span> <span class="toc-text">Usage : in transfer learning</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linear-Regression-using-GradientTape"><span class="toc-number">2.</span> <span class="toc-text">Linear Regression using GradientTape</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Neural-Networks-with-GradientTape"><span class="toc-number">3.</span> <span class="toc-text">Neural Networks with GradientTape</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/TF_Basics_P2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://zarif98sjs.github.io/dummy/TF_Basics_P2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/TF_Basics_P2/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&text=Tensorflow Basics : Part 2"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&is_video=false&description=Tensorflow Basics : Part 2"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 2&body=Check out this article: https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&title=Tensorflow Basics : Part 2"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&name=Tensorflow Basics : Part 2&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P2/&t=Tensorflow Basics : Part 2"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -339,11 +350,11 @@ Accuracy: 0.9911
     <nav>
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -391,7 +402,7 @@ Accuracy: 0.9911
   </script>
 
 
-<script src="/dummy/js/main.js"></script>
+<script src="/zarif98sjs/mindcraft/js/main.js"></script>
 
 <!-- search -->
 

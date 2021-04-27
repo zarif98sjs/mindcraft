@@ -9,36 +9,36 @@
     <meta name="description" content="The Actual ProblemGiven a flow network , find a feasible flow through the flow network that obtains the maximum possible flow rate . In plain language , you are given a source and a sink in a flow net">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Max Flow : A Deep Dive">
-<meta property="og:url" content="https://zarif98sjs.github.io/dummy/MaxFlow/index.html">
+<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/index.html">
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="The Actual ProblemGiven a flow network , find a feasible flow through the flow network that obtains the maximum possible flow rate . In plain language , you are given a source and a sink in a flow net">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/yes_no.jpg">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/Flow1.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/Flow2.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/Flow3.png">
-<meta property="og:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/Flow4.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/yes_no.jpg">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/Flow1.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/Flow2.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/Flow3.png">
+<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/Flow4.png">
 <meta property="article:published_time" content="2020-07-04T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-26T19:58:16.738Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zarif98sjs.github.io/dummy/MaxFlow/yes_no.jpg">
+<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/MaxFlow/yes_no.jpg">
     
     
       
         
-          <link rel="shortcut icon" href="/dummy/images/favicon.ico">
+          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/dummy/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/dummy/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
         
       
     
@@ -46,7 +46,7 @@
     <title>Max Flow : A Deep Dive</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/dummy/css/style.css">
+<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -77,11 +77,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -89,10 +89,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/dummy/RedBlackTree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/RedBlackTree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/dummy/BinaryLifting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/BinaryLifting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -105,17 +105,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/MaxFlow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://github.com/zarif98sjs/mindcraft/MaxFlow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -153,14 +153,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/dummy/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/dummy/categories/Algorithm/Deep-Dive/">Deep Dive</a>
+        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Algorithm/Deep-Dive/">Deep Dive</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/dummy/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
+        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
     </div>
 
 
@@ -179,21 +179,21 @@
 Spoiler
 </summary>
 
-<p><img src="/dummy/MaxFlow/yes_no.jpg"></p>
+<p><img src="/zarif98sjs/mindcraft/MaxFlow/yes_no.jpg"></p>
 </details>
 
 <p>Okay , let’s try first atleast to see if it works . Here is an example graph :</p>
-<p><img src="/dummy/MaxFlow/Flow1.png"></p>
+<p><img src="/zarif98sjs/mindcraft/MaxFlow/Flow1.png"></p>
 <p>What would you do if you were to solve greedily ? </p>
 <ul>
 <li>You would find an arbitrary path that can go from <code>s</code> to <code>t</code></li>
 <li>Find the <strong>bottleneck</strong> value of this path and add to the flow . ( Not to mention that it has to be positive to add to the maximum flow )</li>
 </ul>
 <p>But . look at this . </p>
-<p><img src="/dummy/MaxFlow/Flow2.png"></p>
+<p><img src="/zarif98sjs/mindcraft/MaxFlow/Flow2.png"></p>
 <p>Imagine being a dumb guy like me and taking the _<strong>blue</strong>_ path as your first path . You are <strong>screwed</strong> .You can’t find anymore path with a bottlencek value &gt; 0 . So you end up having Max Flow = 3 .</p>
 <p>But if you were to take a different path you will be able to find larger answer than your current one . Here is an example of this case :</p>
-<p><img src="/dummy/MaxFlow/Flow3.png"></p>
+<p><img src="/zarif98sjs/mindcraft/MaxFlow/Flow3.png"></p>
 <p>Here Max Flow  = 5 . If you were to try out a few more possible order , you will see that this eventually is the maximum possible value .</p>
 <p>So , The answer is _<strong>NO</strong>_ . You can <strong>not</strong> greedily solve the Maximum Flow Problem .</p>
 <p>Although that’s the intuitive thing to do , this greedy approach will fail miserably .</p>
@@ -222,7 +222,7 @@ Spoiler
 
 <p>The answer is quite counter intuitively <strong>YES</strong> . </p>
 <p>The example graph is the same as the one prviously discussed . And in the same way , being a dumb guy like me you have made your first move wrong and currently screwed . What operation can you possibly do to unscrew ( I’m not sure if that is even a valid word :v ) yourself ?<br>If there was some way to go from <code>b</code> to <code>a</code> you can get another flow with value <code>2</code> using the path <code>s</code> -&gt; <code>b</code> -&gt; <code>a</code> -&gt; <code>t</code> .<br>Imagine pushing an <strong>imaginary</strong> flow value of <code>2</code> to the opposite direction of edge <code>a</code> -&gt; <code>b</code> . This negative flow will enduce a path <code>s</code> -&gt; <code>b</code> -&gt; <code>a</code> -&gt; <code>t</code> . Although realistically there is no edge <code>b</code> -&gt; <code>a</code> but adding an edge in the opposite direction is <em><strong>equivalent</strong></em> to reducing the flow through <code>a</code> -&gt; <code>b</code> . This is what we did :</p>
-<p><img src="/dummy/MaxFlow/Flow4.png"></p>
+<p><img src="/zarif98sjs/mindcraft/MaxFlow/Flow4.png"></p>
 <p>Thus , reducing the <code>a</code> -&gt; <code>b</code> flow from 3 to 1 . We have indeed increased the maximum flow .</p>
 <p>So , <strong>YES</strong> . Reducing the flow in a network can cause the overall flow to increase !</p>
 <p>Hope you had your Eureka Moment after reading this far ! </p>
@@ -243,11 +243,11 @@ Spoiler
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
@@ -258,17 +258,17 @@ Spoiler
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/dummy/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/dummy/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/dummy/MaxFlow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/dummy/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/dummy/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/dummy/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/MaxFlow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&text=Max Flow : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&is_video=false&description=Max Flow : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Max Flow : A Deep Dive&body=Check out this article: https://github.com/zarif98sjs/mindcraft/MaxFlow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&title=Max Flow : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/MaxFlow/&name=Max Flow : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/MaxFlow/&t=Max Flow : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -296,11 +296,11 @@ Spoiler
     <nav>
       <ul>
          
-          <li><a href="/dummy/">Home</a></li>
+          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
          
-          <li><a href="/dummy/archives/">Archive</a></li>
+          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
          
-          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -348,7 +348,7 @@ Spoiler
   </script>
 
 
-<script src="/dummy/js/main.js"></script>
+<script src="/zarif98sjs/mindcraft/js/main.js"></script>
 
 <!-- search -->
 
