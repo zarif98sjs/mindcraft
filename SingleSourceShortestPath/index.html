@@ -9,38 +9,38 @@
     <meta name="description" content="The ProblemGiven a source in a graph you have to find the shortest path to all other nodes . The Existence of Shortest PathThe shortest path exists when there is no negative weight cycle . This is pre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Single Source Shortest Path : A Deep Dive">
-<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/index.html">
+<meta property="og:url" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/index.html">
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="The ProblemGiven a source in a graph you have to find the shortest path to all other nodes . The Existence of Shortest PathThe shortest path exists when there is no negative weight cycle . This is pre">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Graph.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%201.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%202.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%203.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Worst%20Case.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Dijkstra%20Fail.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Graph.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Iteration%201.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Iteration%202.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Iteration%203.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Worst%20Case.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Dijkstra%20Fail.png">
 <meta property="article:published_time" content="2020-07-02T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-26T19:58:51.554Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png">
     
     
       
         
-          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
+          <link rel="shortcut icon" href="/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/mindcraft/images/apple-touch-icon.png">
         
       
     
@@ -48,7 +48,7 @@
     <title>Single Source Shortest Path : A Deep Dive</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
+<link rel="stylesheet" href="/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -79,11 +79,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -91,10 +91,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/BinaryLifting/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/mindcraft/BinaryLifting/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/CNN-Part-3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/mindcraft/CNN-Part-3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -107,17 +107,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&text=Single Source Shortest Path : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&is_video=false&description=Single Source Shortest Path : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Single Source Shortest Path : A Deep Dive&body=Check out this article: https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&name=Single Source Shortest Path : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&t=Single Source Shortest Path : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&text=Single Source Shortest Path : A Deep Dive"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&is_video=false&description=Single Source Shortest Path : A Deep Dive"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Single Source Shortest Path : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&name=Single Source Shortest Path : A Deep Dive&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&t=Single Source Shortest Path : A Deep Dive"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -155,14 +155,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Algorithm/Deep-Dive/">Deep Dive</a>
+        <a class="category-link" href="/mindcraft/categories/Algorithm/">Algorithm</a> › <a class="category-link" href="/mindcraft/categories/Algorithm/Deep-Dive/">Deep Dive</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
+        <a class="tag-link-link" href="/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
     </div>
 
 
@@ -173,7 +173,7 @@
   <div class="content" itemprop="articleBody">
     <h1 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a><strong>The Problem</strong></h1><p>Given a source in a graph you have to find the shortest path to all other nodes .</p>
 <h1 id="The-Existence-of-Shortest-Path"><a href="#The-Existence-of-Shortest-Path" class="headerlink" title="The Existence of Shortest Path"></a><strong>The Existence of Shortest Path</strong></h1><p>The shortest path exists when there is no negative weight cycle . This is pretty much intuitive . Whenever there is a negative weight cycle we can traverse that cycle and our shortest path will decrease . We can do that infinite amount of times .<br>Thus leads to having no shortest path .</p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Negavtive%20Cycle.png"></p>
 <h1 id="Bruteforce"><a href="#Bruteforce" class="headerlink" title="Bruteforce"></a><strong>Bruteforce</strong></h1><p>If we were to solve this by bruteforce , we can use BFS for every possible path to a node and take the shortest one . </p>
 <p><strong>Complexity</strong> : <code>O( number of paths * (E + V) )</code></p>
 <p>Now , the number of paths can be exponential . So , we can not solve this problem efficiently </p>
@@ -191,20 +191,20 @@
 
 <p>Now , why are we doing this <code>n-1</code> times for each edge ? </p>
 <p>After we relax an edge the shortest path to that vertex is <code>length of the shortest path of the vertex that relaxed the edge + 1</code> . Let’s see a simple example for better understanding :</p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Graph.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Graph.png"></p>
 <p>If we were to simulate Bellman Ford Algorithm on this graph ,</p>
 <p><strong>Iteration 1</strong></p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%201.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Iteration%201.png"></p>
 <p>We relaxed <code>s -&gt; a</code> and <code>s -&gt; c</code> . Our shortest path to <code>a</code> and <code>c</code> increased to 1 . </p>
 <p><strong>Iteration 2</strong></p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%202.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Iteration%202.png"></p>
 <p>We relaxed <code>a -&gt; b</code> . So shortest path to <code>b</code> is now <code>2</code> .</p>
 <p><strong>Iteration 3</strong></p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Iteration%203.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Iteration%203.png"></p>
 <p>We can further relax <code>b -&gt; c</code> . Now the shortes path to <code>c</code> increased to <code>3</code> .</p>
 <p>Now , we can clearly see why are doing the iteration <code>n-1</code> times . For a shortest path to exist to any node it can not have a path containing more than <code>n-1</code> edges .<br>We can clearly see fro the simulation , after <code>ith</code> iteration we get the shortest path with atmost <code>i</code> edges . That’s why we are doing this relaxation step <code>n-1</code> times .</p>
 <h2 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a><strong>Complexity Analysis</strong></h2><p>Complexity is pretty much straighforward : <code>O( V * E )</code></p>
-<h2 id="Worst-Case-Behaviour"><a href="#Worst-Case-Behaviour" class="headerlink" title="Worst Case Behaviour"></a><strong>Worst Case Behaviour</strong></h2><p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Worst%20Case.png"></p>
+<h2 id="Worst-Case-Behaviour"><a href="#Worst-Case-Behaviour" class="headerlink" title="Worst Case Behaviour"></a><strong>Worst Case Behaviour</strong></h2><p><img src="/mindcraft/SingleSourceShortestPath/Worst%20Case.png"></p>
 <p>Edges are in the list in worst order<br><code>3 -&gt; 4</code> , <code>2 -&gt; 3</code> , <code>1 -&gt; 2</code> , <code>0 -&gt; 1</code></p>
 <p>Can you think of any way to optimize Bellman Ford’s Algorithm ?</p>
 <h2 id="Optimization-Idea-1"><a href="#Optimization-Idea-1" class="headerlink" title="Optimization Idea 1"></a><strong>Optimization Idea 1</strong></h2><p>If during the current step no edge is relaxed , then we have found the shortest path to all the nodes as in the next iteration nothing will improve as there simply is <em>no candidate to improve</em> .<br>So , if no relaxation is made we can terminate . The worst case complexity remains same .</p>
@@ -288,7 +288,7 @@
 <p>&nbsp;</p>
 <h2 id="Shortcomings"><a href="#Shortcomings" class="headerlink" title="Shortcomings"></a><strong>Shortcomings</strong></h2><p>Dijkstra’s Algorithm can fail on graphs with <em><strong>negative weights</strong>_ . Because of the greedy approach we take , whenever we are done processing a node by extracting , we have found the _<strong>optimal subpath</strong></em> for that node . But if a graph has negative weights , latter is not true .</p>
 <p>Here is an example :</p>
-<p><img src="/zarif98sjs/mindcraft/SingleSourceShortestPath/Dijkstra%20Fail.png"></p>
+<p><img src="/mindcraft/SingleSourceShortestPath/Dijkstra%20Fail.png"></p>
 <p>Try simulating to see why Dijkstra fails in this case and also for which vertex .</p>
 <p>&nbsp;</p>
 <h1 id="Modified-Dijkstra’s-Algorithm"><a href="#Modified-Dijkstra’s-Algorithm" class="headerlink" title="Modified Dijkstra’s Algorithm"></a><strong>Modified Dijkstra’s Algorithm</strong></h1><p>Modified Dijkstra’s Algorithm <del>does not</del> works on negative weighted graph .</p>
@@ -342,11 +342,11 @@ Answer
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
@@ -357,17 +357,17 @@ Answer
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&text=Single Source Shortest Path : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&is_video=false&description=Single Source Shortest Path : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Single Source Shortest Path : A Deep Dive&body=Check out this article: https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&name=Single Source Shortest Path : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/SingleSourceShortestPath/&t=Single Source Shortest Path : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&text=Single Source Shortest Path : A Deep Dive"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&is_video=false&description=Single Source Shortest Path : A Deep Dive"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Single Source Shortest Path : A Deep Dive&body=Check out this article: https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&title=Single Source Shortest Path : A Deep Dive"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&name=Single Source Shortest Path : A Deep Dive&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/SingleSourceShortestPath/&t=Single Source Shortest Path : A Deep Dive"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -395,11 +395,11 @@ Answer
     <nav>
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -447,7 +447,7 @@ Answer
   </script>
 
 
-<script src="/zarif98sjs/mindcraft/js/main.js"></script>
+<script src="/mindcraft/js/main.js"></script>
 
 <!-- search -->
 

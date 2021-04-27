@@ -9,34 +9,34 @@
     <meta name="description" content="tf.constant tf.ones tf.zeros tf.rank tf.random.normal tf.random.uniform tf.Variable tf.convert_to_tensor tf.argmax tf.reshape tf.Variable.assign tf.Variable.assign_add tf.Variable.assign_sub    12imp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tensorflow Basics : Part 1">
-<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/index.html">
+<meta property="og:url" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/index.html">
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="tf.constant tf.ones tf.zeros tf.rank tf.random.normal tf.random.uniform tf.Variable tf.convert_to_tensor tf.argmax tf.reshape tf.Variable.assign tf.Variable.assign_add tf.Variable.assign_sub    12imp">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/output_12_0.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/output_14_0.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_12_0.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_14_0.png">
 <meta property="article:published_time" content="2020-06-26T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-27T08:29:06.178Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta property="article:tag" content="Learning Notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/output_12_0.png">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_12_0.png">
     
     
       
         
-          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
+          <link rel="shortcut icon" href="/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/mindcraft/images/apple-touch-icon.png">
         
       
     
@@ -44,7 +44,7 @@
     <title>Tensorflow Basics : Part 1</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
+<link rel="stylesheet" href="/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -75,11 +75,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -87,10 +87,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/TF_Basics_P2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/mindcraft/TF_Basics_P2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/Centroid/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/mindcraft/Centroid/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -103,17 +103,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -151,14 +151,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/">Machine Learning</a> › <a class="category-link" href="/zarif98sjs/mindcraft/categories/Machine-Learning/Tensorflow/">Tensorflow</a>
+        <a class="category-link" href="/mindcraft/categories/Machine-Learning/">Machine Learning</a> › <a class="category-link" href="/mindcraft/categories/Machine-Learning/Tensorflow/">Tensorflow</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
+        <a class="tag-link-link" href="/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
     </div>
 
 
@@ -361,11 +361,11 @@ exp   : [54.598152 54.598152 54.598152 54.598152]
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
@@ -376,17 +376,17 @@ exp   : [54.598152 54.598152 54.598152 54.598152]
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -414,11 +414,11 @@ exp   : [54.598152 54.598152 54.598152 54.598152]
     <nav>
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -466,7 +466,7 @@ exp   : [54.598152 54.598152 54.598152 54.598152]
   </script>
 
 
-<script src="/zarif98sjs/mindcraft/js/main.js"></script>
+<script src="/mindcraft/js/main.js"></script>
 
 <!-- search -->
 

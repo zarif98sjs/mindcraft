@@ -9,33 +9,33 @@
     <meta name="description" content="What’s this ?Binary Lifting is a simple computation technique which makes use of 2 simple facts :   Any number can be represented as sum of some powers of 2’s Dynamic Programming  I will be using an">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary Lifting">
-<meta property="og:url" content="https://github.com/zarif98sjs/mindcraft/BinaryLifting/index.html">
+<meta property="og:url" content="https://zarif98sjs.github.io/mindcraft/BinaryLifting/index.html">
 <meta property="og:site_name" content="MindCraft">
 <meta property="og:description" content="What’s this ?Binary Lifting is a simple computation technique which makes use of 2 simple facts :   Any number can be represented as sum of some powers of 2’s Dynamic Programming  I will be using an">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/BinaryLifting/Binary%20Lifting%201.png">
-<meta property="og:image" content="https://github.com/zarif98sjs/mindcraft/BinaryLifting/Binary%20Lifting%202.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/BinaryLifting/Binary%20Lifting%201.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/BinaryLifting/Binary%20Lifting%202.png">
 <meta property="article:published_time" content="2020-07-03T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-26T19:56:24.356Z">
 <meta property="article:author" content="Md. Zarif Ul Alam">
 <meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/zarif98sjs/mindcraft/BinaryLifting/Binary%20Lifting%201.png">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/mindcraft/BinaryLifting/Binary%20Lifting%201.png">
     
     
       
         
-          <link rel="shortcut icon" href="/zarif98sjs/mindcraft/images/favicon.ico">
+          <link rel="shortcut icon" href="/mindcraft/images/favicon.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/zarif98sjs/mindcraft/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/mindcraft/images/favicon-192x192.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/zarif98sjs/mindcraft/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/mindcraft/images/apple-touch-icon.png">
         
       
     
@@ -43,7 +43,7 @@
     <title>Binary Lifting</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/zarif98sjs/mindcraft/css/style.css">
+<link rel="stylesheet" href="/mindcraft/css/style.css">
 
     <!-- persian styles -->
     
@@ -74,11 +74,11 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </span>
@@ -86,10 +86,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/zarif98sjs/mindcraft/MaxFlow/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/mindcraft/MaxFlow/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/zarif98sjs/mindcraft/SingleSourceShortestPath/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/mindcraft/SingleSourceShortestPath/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -102,17 +102,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/BinaryLifting/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&text=Binary Lifting"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&is_video=false&description=Binary Lifting"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Binary Lifting&body=Check out this article: https://github.com/zarif98sjs/mindcraft/BinaryLifting/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&name=Binary Lifting&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&t=Binary Lifting"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/BinaryLifting/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&text=Binary Lifting"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&is_video=false&description=Binary Lifting"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Binary Lifting&body=Check out this article: https://zarif98sjs.github.io/mindcraft/BinaryLifting/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&name=Binary Lifting&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&t=Binary Lifting"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -150,14 +150,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/zarif98sjs/mindcraft/categories/Competitive-Programming/">Competitive Programming</a>
+        <a class="category-link" href="/mindcraft/categories/Competitive-Programming/">Competitive Programming</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/zarif98sjs/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
+        <a class="tag-link-link" href="/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>
     </div>
 
 
@@ -166,7 +166,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><img src="/zarif98sjs/mindcraft/BinaryLifting/Binary%20Lifting%201.png"></p>
+    <p><img src="/mindcraft/BinaryLifting/Binary%20Lifting%201.png"></p>
 <h1 id="What’s-this"><a href="#What’s-this" class="headerlink" title="What’s this ?"></a><strong>What’s this ?</strong></h1><p><em><strong>Binary Lifting</strong></em> is a simple computation technique which makes use of 2 simple facts : </p>
 <ul>
 <li><em>Any number can be represented as sum of some powers of 2’s</em></li>
@@ -186,7 +186,7 @@ Although I will be using a tree for this , you can use this same idea outside tr
 </ul>
 <p>Taking advantage of this , if we want to know <strong>kth ancestor</strong> , we can represent taking <code>k</code> steps as taking no more than <code>log(k)</code> steps . Now how do we solve the problem by taking <code>log(k)</code> steps ? After all taking <code>log(k)</code> steps ain’t the same as taking <code>k</code> steps :smirk: Otherwise we would have done that earlier !</p>
 <p>Here’s how we do this ,</p>
-<p><img src="/zarif98sjs/mindcraft/BinaryLifting/Binary%20Lifting%202.png"></p>
+<p><img src="/mindcraft/BinaryLifting/Binary%20Lifting%202.png"></p>
 <p>Imagine this is the tree . The parent of <code>1</code> is <code>2</code> , parent of <code>2</code> is <code>3</code> and so on . Now , what we do is basically use the information known so far to compute my curent step . Suppose we want to know the <strong>2nd ancestor</strong> of <code>1</code> . You can easily see that this is nothing other than <strong>1st ancestor</strong> (i.e his parent in this case) of <code>2</code> . We can do this as we already know the information of 1st ancestors of all the nodes . This is how we solve our problem by taking advantage of the information we know so far . The fancy name of what we did so far is <em>Dynamic Programming</em> .  </p>
 <p>This is what we did so far in <em>pseudocode</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ancestor[i][j] = 2^j th ancestor of ith node</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> nodes:</span><br><span class="line">    ancestor[i][<span class="number">0</span>] = parent[i]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span> to log(k):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nodes:</span><br><span class="line">        middle_man = ancestor[i][j-<span class="number">1</span>] <span class="comment"># this guy helps me to calculate my current step</span></span><br><span class="line">        ancestor[i][j] = ancestor[middle_man][j-<span class="number">1</span>] <span class="comment"># 2^(j-1) th ancestor&#x27;s 2^(j-1) th ancestor is what we want</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -277,11 +277,11 @@ Idea
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </div>
@@ -292,17 +292,17 @@ Idea
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://github.com/zarif98sjs/mindcraft/BinaryLifting/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&text=Binary Lifting"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&is_video=false&description=Binary Lifting"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Binary Lifting&body=Check out this article: https://github.com/zarif98sjs/mindcraft/BinaryLifting/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&name=Binary Lifting&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://github.com/zarif98sjs/mindcraft/BinaryLifting/&t=Binary Lifting"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/BinaryLifting/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&text=Binary Lifting"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&is_video=false&description=Binary Lifting"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Binary Lifting&body=Check out this article: https://zarif98sjs.github.io/mindcraft/BinaryLifting/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&title=Binary Lifting"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&name=Binary Lifting&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/BinaryLifting/&t=Binary Lifting"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -330,11 +330,11 @@ Idea
     <nav>
       <ul>
          
-          <li><a href="/zarif98sjs/mindcraft/">Home</a></li>
+          <li><a href="/mindcraft/">Home</a></li>
          
-          <li><a href="/zarif98sjs/mindcraft/archives/">Archive</a></li>
+          <li><a href="/mindcraft/archives/">Archive</a></li>
          
-          <li><a target="_blank" rel="noopener" href="https://zarif98sjs.github.io/">About Me</a></li>
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
         
       </ul>
     </nav>
@@ -382,7 +382,7 @@ Idea
   </script>
 
 
-<script src="/zarif98sjs/mindcraft/js/main.js"></script>
+<script src="/mindcraft/js/main.js"></script>
 
 <!-- search -->
 
