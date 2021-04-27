@@ -1,5 +1,5 @@
 # Novela settings
-theme = "hugo-theme-novelahugo-theme-novela"
+theme = "hugo-theme-novela"
 
 paginate = 6
 
