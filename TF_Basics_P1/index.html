@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="tf.constant tf.ones tf.zeros tf.rank tf.random.normal tf.random.uniform tf.Variable tf.convert_to_tensor tf.argmax tf.reshape tf.Variable.assign tf.Variable.assign_add tf.Variable.assign_sub    12imp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow Basics : Part 1">
+<meta property="og:url" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/index.html">
+<meta property="og:site_name" content="MindCraft">
+<meta property="og:description" content="tf.constant tf.ones tf.zeros tf.rank tf.random.normal tf.random.uniform tf.Variable tf.convert_to_tensor tf.argmax tf.reshape tf.Variable.assign tf.Variable.assign_add tf.Variable.assign_sub    12imp">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_12_0.png">
+<meta property="og:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_14_0.png">
+<meta property="article:published_time" content="2020-06-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-27T08:29:06.178Z">
+<meta property="article:author" content="Md. Zarif Ul Alam">
+<meta property="article:tag" content="Algo, DS, Software &amp; What Not!">
+<meta property="article:tag" content="Learning Notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/output_12_0.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/mindcraft/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/mindcraft/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/mindcraft/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Tensorflow Basics : Part 1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/mindcraft/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/mindcraft/">Home</a></li>
+         
+          <li><a href="/mindcraft/archives/">Archive</a></li>
+         
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/mindcraft/TF_Basics_P2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/mindcraft/Centroid/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Constant-tf-constant"><span class="toc-number">1.</span> <span class="toc-text">Constant : tf.constant</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tf-ones"><span class="toc-number">2.</span> <span class="toc-text">tf.ones</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tf-zeros"><span class="toc-number">3.</span> <span class="toc-text">tf.zeros</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rank-tf-rank"><span class="toc-number">4.</span> <span class="toc-text">rank : tf.rank</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#normal-distribution-tf-random-normal"><span class="toc-number">5.</span> <span class="toc-text">normal distribution : tf.random.normal</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uniform-distribution-tf-random-uniform"><span class="toc-number">6.</span> <span class="toc-text">uniform distribution : tf.random.uniform</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Variable-tf-Variable"><span class="toc-number">7.</span> <span class="toc-text">Variable : tf.Variable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-convert-to-tensor"><span class="toc-number">7.1.</span> <span class="toc-text">tf.convert_to_tensor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-argmax"><span class="toc-number">7.2.</span> <span class="toc-text">tf.argmax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-reshape"><span class="toc-number">7.3.</span> <span class="toc-text">tf.reshape</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#can-reassign-the-tensor-using-tf-Variable-assign-Calling-assign-does-not-usually-allocate-a-new-tensor-instead-the-existing-tensor%E2%80%99s-memory-is-reused"><span class="toc-number">7.3.1.</span> <span class="toc-text">can reassign the tensor using tf.Variable.assign Calling assign does not (usually) allocate a new tensor; instead, the existing tensor’s memory is reused.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#assignment-operations"><span class="toc-number">7.4.</span> <span class="toc-text">assignment operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#some-mathematical-operations"><span class="toc-number">7.5.</span> <span class="toc-text">some mathematical operations</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Tensorflow Basics : Part 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Md. Zarif Ul Alam</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-26T00:00:00.000Z" itemprop="datePublished">2020-06-26</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/mindcraft/categories/Machine-Learning/">Machine Learning</a> › <a class="category-link" href="/mindcraft/categories/Machine-Learning/Tensorflow/">Tensorflow</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/mindcraft/tags/Algo-DS-Software-What-Not/" rel="tag">Algo, DS, Software & What Not!</a>, <a class="tag-link-link" href="/mindcraft/tags/Learning-Notes/" rel="tag">Learning Notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <ul>
+<li><code>tf.constant</code></li>
+<li><code>tf.ones</code></li>
+<li><code>tf.zeros</code></li>
+<li><code>tf.rank</code></li>
+<li><code>tf.random.normal</code></li>
+<li><code>tf.random.uniform</code></li>
+<li><code>tf.Variable</code><ul>
+<li><code>tf.convert_to_tensor</code></li>
+<li><code>tf.argmax</code></li>
+<li><code>tf.reshape</code></li>
+<li><code>tf.Variable.assign</code></li>
+<li><code>tf.Variable.assign_add</code></li>
+<li><code>tf.Variable.assign_sub</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Version , &quot;</span>,tf.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Version ,  2.1.0
+</code></pre>
+<h1 id="Constant-tf-constant"><a href="#Constant-tf-constant" class="headerlink" title="Constant : tf.constant"></a>Constant : <code>tf.constant</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.constant(</span><br><span class="line">    value, dtype&#x3D;None, shape&#x3D;None, name&#x3D;&#39;Const&#39;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x1 = tf.constant([<span class="number">5</span>, <span class="number">2</span> ,<span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(x1)</span><br><span class="line"><span class="built_in">print</span>(x1.numpy)</span><br><span class="line"><span class="built_in">print</span>(x1.shape)</span><br><span class="line"><span class="built_in">print</span>(x1.dtype)</span><br><span class="line"></span><br><span class="line">x2 = tf.constant([[<span class="number">5</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">3</span>]])</span><br><span class="line"><span class="built_in">print</span>(x2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tf.Tensor([5 2 1 3], shape=(4,), dtype=int32)
+&lt;bound method _EagerTensorBase.numpy of &lt;tf.Tensor: shape=(4,), dtype=int32, numpy=array([5, 2, 1, 3])&gt;&gt;
+(4,)
+&lt;dtype: &#39;int32&#39;&gt;
+tf.Tensor(
+[[5 2]
+ [1 3]], shape=(2, 2), dtype=int32)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x3 = tf.constant([<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>] , dtype=<span class="built_in">float</span>)</span><br><span class="line"><span class="built_in">print</span>(x3)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tf.Tensor([5. 2. 1. 3.], shape=(4,), dtype=float32)
+</code></pre>
+<h1 id="tf-ones"><a href="#tf-ones" class="headerlink" title="tf.ones"></a><code>tf.ones</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.ones(</span><br><span class="line">    shape, dtype&#x3D;tf.dtypes.float32, name&#x3D;None</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h1 id="tf-zeros"><a href="#tf-zeros" class="headerlink" title="tf.zeros"></a><code>tf.zeros</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.zeros(</span><br><span class="line">    shape, dtype&#x3D;tf.dtypes.float32, name&#x3D;None</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(tf.ones(shape=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line"><span class="built_in">print</span>(tf.zeros(shape=(<span class="number">2</span>, <span class="number">2</span>),dtype=tf.int16))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tf.ones((<span class="number">3</span>, <span class="number">4</span>), tf.int32))</span><br><span class="line"><span class="built_in">print</span>(tf.zeros((<span class="number">3</span>, <span class="number">4</span>), tf.int32))</span><br></pre></td></tr></table></figure>
+
+<pre><code>tf.Tensor(
+[[1. 1.]
+ [1. 1.]], shape=(2, 2), dtype=float32)
+tf.Tensor(
+[[0 0]
+ [0 0]], shape=(2, 2), dtype=int16)
+tf.Tensor(
+[[1 1 1 1]
+ [1 1 1 1]
+ [1 1 1 1]], shape=(3, 4), dtype=int32)
+tf.Tensor(
+[[0 0 0 0]
+ [0 0 0 0]
+ [0 0 0 0]], shape=(3, 4), dtype=int32)
+</code></pre>
+<h1 id="rank-tf-rank"><a href="#rank-tf-rank" class="headerlink" title="rank : tf.rank"></a>rank : <code>tf.rank</code></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rank_0 = tf.Variable(<span class="number">7</span>)</span><br><span class="line">rank_1 = tf.Variable([<span class="number">7</span>])</span><br><span class="line">rank_2 = tf.Variable([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">rank_3 = tf.Variable([[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]], [[<span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>]]])</span><br><span class="line">rank_4 = tf.reshape(tf.<span class="built_in">range</span>(start=<span class="number">0</span>, limit=<span class="number">24</span>, delta=<span class="number">1</span>), shape=[<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">ranks = [rank_0, rank_1, rank_2, rank_3, rank_4]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> r <span class="keyword">in</span> ranks:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Rank is:&quot;</span>, tf.rank(r).numpy())</span><br></pre></td></tr></table></figure>
+
+<pre><code>Rank is: 0
+Rank is: 1
+Rank is: 2
+Rank is: 3
+Rank is: 4
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Math entity</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Scalar (magnitude only)</td>
+<td>[1.5]</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Vector (magnitude and direction)</td>
+<td>[2, 3, 5, 8 11]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Matrix (table of numbers)</td>
+<td>[[1, 2], [3, 4]]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3-Tensor (cube of numbers)</td>
+<td>[[[1], [2]], [[3], [4]]]</td>
+</tr>
+<tr>
+<td>n</td>
+<td>n-Tensor (you get the idea)</td>
+<td>[[[1, 2], [3, 4], [5, 6]], [[7, 8], [9, 10], [11, 12]]]</td>
+</tr>
+</tbody></table>
+<p>Note : The rank of a tensor is not the same as the rank of a matrix. The rank of a tensor is the number of indices required to uniquely select each element of the tensor. Rank is also known as “order”, “degree”, or “ndims.”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = tf.ones((<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line">rank = tf.rank(x).numpy()</span><br><span class="line"><span class="built_in">print</span>(rank)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tf.Tensor(
+[[[1. 1.]
+  [1. 1.]
+  [1. 1.]]], shape=(1, 3, 2), dtype=float32)
+3
+</code></pre>
+<h1 id="normal-distribution-tf-random-normal"><a href="#normal-distribution-tf-random-normal" class="headerlink" title="normal distribution : tf.random.normal"></a>normal distribution : <code>tf.random.normal</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.random.normal(</span><br><span class="line">    shape, mean&#x3D;0.0, stddev&#x3D;1.0, dtype&#x3D;tf.dtypes.float32, seed&#x3D;None, name&#x3D;None</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">N = <span class="number">100</span></span><br><span class="line">tf.random.set_seed(<span class="number">12</span>);</span><br><span class="line">normal_dist = tf.random.normal(shape=(N,), mean=<span class="number">5.5</span>, stddev=<span class="number">1.</span>)</span><br><span class="line">plt.plot(normal_dist)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Random number idx&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;N random value&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="output_12_0.png" alt="png"></p>
+<h1 id="uniform-distribution-tf-random-uniform"><a href="#uniform-distribution-tf-random-uniform" class="headerlink" title="uniform distribution : tf.random.uniform"></a>uniform distribution : <code>tf.random.uniform</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.random.uniform(</span><br><span class="line">    shape, minval&#x3D;0, maxval&#x3D;None, dtype&#x3D;tf.dtypes.float32, seed&#x3D;None, name&#x3D;None</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">N = <span class="number">100</span></span><br><span class="line">tf.random.set_seed(<span class="number">12</span>);</span><br><span class="line">uniform_dist = tf.random.uniform(shape=(N,), minval=<span class="number">0</span>, maxval=<span class="number">10</span>)</span><br><span class="line">plt.plot(uniform_dist)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Random number idx&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;N random value&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="output_14_0.png" alt="png"></p>
+<h1 id="Variable-tf-Variable"><a href="#Variable-tf-Variable" class="headerlink" title="Variable : tf.Variable"></a>Variable : <code>tf.Variable</code></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_tensor = tf.constant([[<span class="number">1.0</span>, <span class="number">2.0</span>], [<span class="number">3.0</span>, <span class="number">4.0</span>]])</span><br><span class="line"><span class="built_in">print</span>(my_tensor)</span><br><span class="line">my_variable = tf.Variable(my_tensor)</span><br><span class="line"><span class="built_in">print</span>(my_variable)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tf.Tensor(
+[[1. 2.]
+ [3. 4.]], shape=(2, 2), dtype=float32)
+&lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 2.],
+       [3., 4.]], dtype=float32)&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Variables can be all kinds of types, just like tensors</span></span><br><span class="line"></span><br><span class="line">bool_variable = tf.Variable([<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">True</span>])</span><br><span class="line">complex_variable = tf.Variable([<span class="number">5</span> + <span class="number">4j</span>, <span class="number">6</span> + <span class="number">1j</span>])</span><br></pre></td></tr></table></figure>
+
+<p>Most tensor operations work on variables as expected,<br>although variables cannot be reshaped</p>
+<h2 id="tf-convert-to-tensor"><a href="#tf-convert-to-tensor" class="headerlink" title="tf.convert_to_tensor"></a><code>tf.convert_to_tensor</code></h2><h2 id="tf-argmax"><a href="#tf-argmax" class="headerlink" title="tf.argmax"></a><code>tf.argmax</code></h2><h2 id="tf-reshape"><a href="#tf-reshape" class="headerlink" title="tf.reshape"></a><code>tf.reshape</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;variable:&quot;</span>, my_variable)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nViewed as a tensor:&quot;</span>, tf.convert_to_tensor(my_variable))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;variable:&quot;</span>, my_variable)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nIndex of highest value:&quot;</span>, tf.argmax(my_variable))</span><br><span class="line"></span><br><span class="line"><span class="comment"># This creates a new tensor; it does not reshape the variable.</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nCopying and reshaping: &quot;</span>, tf.reshape(my_variable, ([<span class="number">1</span>,<span class="number">4</span>])))</span><br></pre></td></tr></table></figure>
+
+<pre><code>variable: &lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 2.],
+       [3., 4.]], dtype=float32)&gt;
+
+Viewed as a tensor: tf.Tensor(
+[[1. 2.]
+ [3. 4.]], shape=(2, 2), dtype=float32)
+variable: &lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 2.],
+       [3., 4.]], dtype=float32)&gt;
+
+Index of highest value: tf.Tensor([1 1], shape=(2,), dtype=int64)
+
+Copying and reshaping:  tf.Tensor([[1. 2. 3. 4.]], shape=(1, 4), dtype=float32)
+</code></pre>
+<h3 id="can-reassign-the-tensor-using-tf-Variable-assign-Calling-assign-does-not-usually-allocate-a-new-tensor-instead-the-existing-tensor’s-memory-is-reused"><a href="#can-reassign-the-tensor-using-tf-Variable-assign-Calling-assign-does-not-usually-allocate-a-new-tensor-instead-the-existing-tensor’s-memory-is-reused" class="headerlink" title="can reassign the tensor using tf.Variable.assign Calling assign does not (usually) allocate a new tensor; instead, the existing tensor’s memory is reused."></a>can reassign the tensor using <code>tf.Variable.assign</code> Calling assign does not (usually) allocate a new tensor; instead, the existing tensor’s memory is reused.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new_value = tf.ones(shape=(<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(my_variable)</span><br><span class="line">my_variable.assign(new_value)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;value of my_variable after assign new value:&#x27;</span>, my_variable)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 2.],
+       [3., 4.]], dtype=float32)&gt;
+value of my_variable after assign new value: &lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 1.],
+       [1., 1.]], dtype=float32)&gt;
+</code></pre>
+<h2 id="assignment-operations"><a href="#assignment-operations" class="headerlink" title="assignment operations"></a>assignment operations</h2><p><code>tf.Variable.assign_add</code><br><code>tf.Variable.assign_sub</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_variable.assign_add(my_variable)</span><br><span class="line"><span class="built_in">print</span>(my_variable)</span><br><span class="line"></span><br><span class="line">my_variable.assign_sub(my_variable*<span class="number">0.5</span>)</span><br><span class="line"><span class="built_in">print</span>(my_variable)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[2., 2.],
+       [2., 2.]], dtype=float32)&gt;
+&lt;tf.Variable &#39;Variable:0&#39; shape=(2, 2) dtype=float32, numpy=
+array([[1., 1.],
+       [1., 1.]], dtype=float32)&gt;
+</code></pre>
+<h2 id="some-mathematical-operations"><a href="#some-mathematical-operations" class="headerlink" title="some mathematical operations"></a>some mathematical operations</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = tf.ones(shape=(<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line">b = tf.ones(shape=(<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a:&#x27;</span>, a.numpy().flatten())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b:&#x27;</span>, b.numpy().flatten())</span><br><span class="line">c = a + b</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c:&#x27;</span>, c.numpy().flatten())</span><br><span class="line">d = tf.square(c)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;square:&#x27;</span>, d.numpy().flatten())</span><br><span class="line">e = tf.exp(d)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;exp   :&#x27;</span>, e.numpy().flatten())</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>a: [1. 1. 1. 1.]
+b: [1. 1. 1. 1.]
+c: [2. 2. 2. 2.]
+square: [4. 4. 4. 4.]
+exp   : [54.598152 54.598152 54.598152 54.598152]
+</code></pre>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/mindcraft/">Home</a></li>
+         
+          <li><a href="/mindcraft/archives/">Archive</a></li>
+         
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Constant-tf-constant"><span class="toc-number">1.</span> <span class="toc-text">Constant : tf.constant</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tf-ones"><span class="toc-number">2.</span> <span class="toc-text">tf.ones</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tf-zeros"><span class="toc-number">3.</span> <span class="toc-text">tf.zeros</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rank-tf-rank"><span class="toc-number">4.</span> <span class="toc-text">rank : tf.rank</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#normal-distribution-tf-random-normal"><span class="toc-number">5.</span> <span class="toc-text">normal distribution : tf.random.normal</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uniform-distribution-tf-random-uniform"><span class="toc-number">6.</span> <span class="toc-text">uniform distribution : tf.random.uniform</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Variable-tf-Variable"><span class="toc-number">7.</span> <span class="toc-text">Variable : tf.Variable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-convert-to-tensor"><span class="toc-number">7.1.</span> <span class="toc-text">tf.convert_to_tensor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-argmax"><span class="toc-number">7.2.</span> <span class="toc-text">tf.argmax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tf-reshape"><span class="toc-number">7.3.</span> <span class="toc-text">tf.reshape</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#can-reassign-the-tensor-using-tf-Variable-assign-Calling-assign-does-not-usually-allocate-a-new-tensor-instead-the-existing-tensor%E2%80%99s-memory-is-reused"><span class="toc-number">7.3.1.</span> <span class="toc-text">can reassign the tensor using tf.Variable.assign Calling assign does not (usually) allocate a new tensor; instead, the existing tensor’s memory is reused.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#assignment-operations"><span class="toc-number">7.4.</span> <span class="toc-text">assignment operations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#some-mathematical-operations"><span class="toc-number">7.5.</span> <span class="toc-text">some mathematical operations</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&text=Tensorflow Basics : Part 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&is_video=false&description=Tensorflow Basics : Part 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow Basics : Part 1&body=Check out this article: https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&title=Tensorflow Basics : Part 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&name=Tensorflow Basics : Part 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://zarif98sjs.github.io/mindcraft/TF_Basics_P1/&t=Tensorflow Basics : Part 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <!-- <a target="_blank" rel="noopener" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fzarif98sjs.github.io%2Fmindcraft%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    Md. Zarif Ul Alam
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/mindcraft/">Home</a></li>
+         
+          <li><a href="/mindcraft/archives/">Archive</a></li>
+         
+          <li><a href="https://zarif98sjs.github.io/">About Me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/mindcraft/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
